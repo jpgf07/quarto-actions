@@ -2,7 +2,7 @@ name: quarto-setup
 
 on: 
   push:
-    branches: test.yml
+    branches: main
 
 jobs:
   quarto-linux:
