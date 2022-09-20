@@ -64,6 +64,12 @@ runs:
               sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
               sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+; sudo apt update; sudo apt-get install -y r-cran-jsonlite
               sudo apt install python3-pip python3-dev; pip install jupyter; pip install numpy; pip install matplotlib
+              sudo R --vanilla
+              install.packages("jsonlite", repos = 'https://cran.r-project.org')
+              install.packages("rmarkdown", repos = 'https://cran.r-project.org')
+              install.packages("ggplot2", repos = 'https://cran.r-project.org')
+              install.packages("dplyr", repos = 'https://cran.r-project.org')
+              q()
               ;;
            "macOS")
               sudo installer -pkg ./$installer -target '/'
