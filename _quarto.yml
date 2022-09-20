@@ -1,0 +1,15 @@
+project:
+  type: website
+  title: "posit-blogs"
+  render:
+    - markdown/*.md
+    - markdown/*.Rmd
+    - markdown/*.qmd
+  output-dir: public
+
+format:
+  html:
+    theme: none
+
+execute:
+  freeze: auto
