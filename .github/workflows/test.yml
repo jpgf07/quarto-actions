@@ -20,9 +20,8 @@ jobs:
           q()
           EOF
           quarto create-project myproject; cd myproject; rm _quarto.yml
-          echo list my files 
-          cd ~
-          ls -l
-#          mv ~/work/quatrotest/quatrotest/_quarto.yml ~/work/quatrotest/quatrotest/myproject/_quarto.yml
-#          mv ~/work/quatrotest/quatrotest/markdown ~/work/quatrotest/quatrotest/myproject/markdown
-#          quarto render --to html   
+          echo list my files directories
+          tree ~/work/quarto-actions/quarto-actions/
+          mv ~/work/quarto-actions/quarto-actions/_quarto.yml ~/work/quarto-actions/quarto-actions/myproject/_quarto.yml
+          mv ~/work/quarto-actions/quarto-actions/markdown ~/work/quarto-actions/quarto-actions/myproject/markdown
+          quarto render --to html   
