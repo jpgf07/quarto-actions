@@ -22,9 +22,9 @@ jobs:
           echo INSTALL JUPYTER
           pip install jupyter
           echo INSTALL NUMPY
-          pip install numpy -y
+          pip install numpy
           echo INSTALL MATPLOT
-          pip install matplotlib -y
+          pip install matplotlib
           tree ~/work/quarto-actions/quarto-actions
   #        sudo R --vanilla <<EOF 
   #        install.packages("jsonlite", repos = 'https://cran.r-project.org')
