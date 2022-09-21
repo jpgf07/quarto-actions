@@ -22,6 +22,7 @@ jobs:
           install.packages("dplyr", repos = 'https://cran.r-project.org')
           q()
           EOF
+          sudo apt install python3-pip python3-dev; pip install jupyter; pip install numpy; pip install matplotlib
           quarto --version
           quarto create-project myproject; cd myproject; rm _quarto.yml
           mv /__w/quarto-actions/quarto-actions/_quarto.yml /__w/quarto-actions/quarto-actions//myproject/_quarto.yml
