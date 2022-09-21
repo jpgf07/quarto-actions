@@ -13,19 +13,14 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@v2
       - uses: r-lib/actions/setup-r@v2
       - run: |
-          echo INSTALL UPDATES
           sudo apt-get update -y
-          echo INSTALL TREE
           sudo apt-get install tree -y
-          echo INSTALL PYTHON
           sudo apt install python3-pip python3-dev -y
           echo INSTALL JUPYTER
           pip install jupyter
-          echo INSTALL NUMPY
           pip install numpy
-          echo INSTALL MATPLOT
           pip install matplotlib
-          tree ~/work/quarto-actions/quarto-actions
+          tree /__w/quarto-actions/quarto-actions/
   #        sudo R --vanilla <<EOF 
   #        install.packages("jsonlite", repos = 'https://cran.r-project.org')
   #        install.packages("rmarkdown", repos = 'https://cran.r-project.org')
