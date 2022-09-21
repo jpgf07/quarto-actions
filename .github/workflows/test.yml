@@ -31,6 +31,15 @@ jobs:
         run: |
             openssl x509 -in hostcert.pem -noout -text
             
+      - name: Setup Docker Buildx
+        id: setup_docker_buildx
+        uses: docker/setup-buildx-action@v1
+        with:
+          version: v0.7.0-rc1
+          endpoint: builders
+          buildkitd-flags: --debug
+          config: buildkitd.toml
+          
             
       - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
