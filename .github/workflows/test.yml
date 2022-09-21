@@ -7,7 +7,7 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    container: myoung34/github-runner-base:latest
+    container: jpgomezz/quatro:uno
     steps:            
       - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
