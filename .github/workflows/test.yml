@@ -23,6 +23,9 @@ jobs:
           quarto --version
           quarto create-project myproject; cd myproject; rm _quarto.yml
           echo list my files directories
+          ls
+          echo tree
+          tree .
  #         mv ~/work/quarto-actions/quarto-actions/_quarto.yml ~/work/quarto-actions/quarto-actions/myproject/_quarto.yml
  #         mv ~/work/quarto-actions/quarto-actions/markdown ~/work/quarto-actions/quarto-actions/myproject/markdown
  #         quarto render --to html
