@@ -13,6 +13,7 @@ jobs:
       - run: |
           apt-get update -y
           apt-get install sudo
+          sudo apt install snapd
       - uses: ./setup
       - run: |
           quarto --version
