@@ -11,8 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          apt-get update
+          apt-get update; apt update
           apt-get install sudo
+          sudo apt install snapd
           sudo snap install gh
       - uses: ./setup
       - run: |
