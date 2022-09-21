@@ -20,7 +20,7 @@ jobs:
           echo INSTALL PYTHON
           sudo apt install python3-pip python3-dev -y
           echo INSTALL JUPYTER
-          pip install jupyter -y
+          pip install jupyter
           echo INSTALL NUMPY
           pip install numpy -y
           echo INSTALL MATPLOT
