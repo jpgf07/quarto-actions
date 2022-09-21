@@ -19,8 +19,8 @@ jobs:
           && sudo apt install gh -y
           apt-get install wget
           wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.1.251/quarto-1.1.251-linux-amd64.deb
-          apt install ./quarto-1.1.251-linux-amd64.deb
-          y
+          apt install --assume-yes ./quarto-1.1.251-linux-amd64.deb
+          
           
           
           
