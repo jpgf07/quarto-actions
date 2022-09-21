@@ -7,7 +7,7 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    container: tcardonne/github-runner:ubuntu-20.04
+    container: myoung34/github-runner-base:latest
     steps:            
       - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
@@ -21,8 +21,8 @@ jobs:
           q()
           EOF
           quarto --version
- #         quarto create-project myproject; cd myproject; rm _quarto.yml
- #         echo list my files directories
+          quarto create-project myproject; cd myproject; rm _quarto.yml
+          echo list my files directories
  #         mv ~/work/quarto-actions/quarto-actions/_quarto.yml ~/work/quarto-actions/quarto-actions/myproject/_quarto.yml
  #         mv ~/work/quarto-actions/quarto-actions/markdown ~/work/quarto-actions/quarto-actions/myproject/markdown
  #         quarto render --to html
