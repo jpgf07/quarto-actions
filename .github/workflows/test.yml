@@ -10,6 +10,8 @@ jobs:
     container: ubuntu:latest
     steps:
       - uses: actions/checkout@v2
+      - run: |
+          apt-get install sudo
       - uses: r-lib/actions/setup-r@v2
       - uses: ./setup
       - run: |
