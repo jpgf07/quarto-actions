@@ -7,7 +7,7 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    container: rocker/r-ubuntu
+    container: berniwittmann/rmarkdown
     steps:
       - uses: actions/checkout@v2
       - uses: ./setup
