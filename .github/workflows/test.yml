@@ -21,19 +21,18 @@ jobs:
           pip install numpy
           pip install matplotlib
           tree /__w/quarto-actions/quarto-actions/
-  #        sudo R --vanilla <<EOF 
-  #        install.packages("jsonlite", repos = 'https://cran.r-project.org')
-  #        install.packages("rmarkdown", repos = 'https://cran.r-project.org')
-  #        install.packages("ggplot2", repos = 'https://cran.r-project.org')
-  #        install.packages("dplyr", repos = 'https://cran.r-project.org')
-  #        q()
-  #        EOF
-  #        quarto create-project myproject; cd myproject; rm _quarto.yml
-  #        mv /__w/quarto-actions/quarto-actions/_quarto.yml /__w/quarto-actions/quarto-actions//myproject/_quarto.yml
-  #        mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/myproject/markdown
-  #        quarto render --to html
-  #        tree ~/work/quarto-actions/quarto-actions
-  #        echo list my files directories
-  #        tree /__w/quarto-actions/quarto-actions/
+          sudo R --vanilla <<EOF 
+          install.packages("jsonlite", repos = 'https://cran.r-project.org')
+          install.packages("rmarkdown", repos = 'https://cran.r-project.org')
+          install.packages("ggplot2", repos = 'https://cran.r-project.org')
+          install.packages("dplyr", repos = 'https://cran.r-project.org')
+          q()
+          EOF
+          quarto create-project myproject; cd myproject; rm _quarto.yml
+          mv /__w/quarto-actions/quarto-actions/_quarto.yml /__w/quarto-actions/quarto-actions//myproject/_quarto.yml
+          mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/myproject/markdown
+          quarto render --to html
+          echo list my files directories
+          tree /__w/quarto-actions/quarto-actions/
 
 
