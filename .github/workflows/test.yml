@@ -17,6 +17,20 @@ jobs:
           && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
           && sudo apt update \
           && sudo apt install gh -y
+          
+      - name: Generate certificates for next step
+        uses: kofemann/action-create-certificate@v0.0.4
+
+        with:
+          hostcert: 'hostcert.pem'
+          hostkey:  'hostkey.pem'
+          cachain:  'ca-chain.pem'
+
+      - name: Use generated certificates
+        run: |
+            openssl x509 -in hostcert.pem -noout -text
+            
+            
       - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
       - run: |
