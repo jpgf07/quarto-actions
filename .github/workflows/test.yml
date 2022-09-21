@@ -13,8 +13,7 @@ jobs:
       - run: |
           apt-get update -y
           apt-get install sudo
-          sudo apt install snapd -y
-          sudo snap install gh
+          sudo snap install --classic -y
       - uses: ./setup
       - run: |
           quarto --version
