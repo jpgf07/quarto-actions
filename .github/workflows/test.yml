@@ -7,19 +7,12 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    container: jpgomezz/quatro:dos
+    container: jpgomezz/quatro:tres
     steps:            
       - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
       - uses: r-lib/actions/setup-r@v2
       - run: |
-          sudo R --vanilla <<EOF 
-          install.packages("jsonlite", repos = 'https://cran.r-project.org')
-          install.packages("rmarkdown", repos = 'https://cran.r-project.org')
-          install.packages("ggplot2", repos = 'https://cran.r-project.org')
-          install.packages("dplyr", repos = 'https://cran.r-project.org')
-          q()
-          EOF
           quarto create-project myproject; cd myproject; rm _quarto.yml
           mv /__w/quarto-actions/quarto-actions/_quarto.yml /__w/quarto-actions/quarto-actions//myproject/_quarto.yml
           mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/myproject/markdown
