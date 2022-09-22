@@ -12,9 +12,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
       - run: |
+          sudo R --vanilla <<EOF
+          install.packages("rmarkdown", repos = 'https://cran.r-project.org')
+          install.packages("ggplot2", repos = 'https://cran.r-project.org')
+          install.packages("dplyr", repos = 'https://cran.r-project.org')
+          q()
+          EOF
           quarto --version
           sudo apt-get install tree
-          pip3 install jupyterlab
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
           sudo mkdir proyectito; cd proyectito
