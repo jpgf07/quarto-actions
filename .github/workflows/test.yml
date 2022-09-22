@@ -18,18 +18,10 @@ jobs:
           sudo apt-get install r-base -y
           pip3 install jupyterlab
           sudo R --vanilla <<EOF
-          install.packages("knitr", repos = 'https://cran.r-project.org')
-          install.packages("tinytex", repos = 'https://cran.r-project.org')
-          install.packages("ROI", repos = 'https://cran.r-project.org')
-          install.packages("Rglpk", repos = 'https://cran.r-project.org')
-          install.packages("lpsolve", repos = 'https://cran.r-project.org')
-          install.packages("CVXR", repos = 'https://cran.r-project.org')
-          install.packages("linprog", repos = 'https://cran.r-project.org')
-          install.packages("Rsolnp", repos = 'https://cran.r-project.org')
-          install.packages("ucminf", repos = 'https://cran.r-project.org')
-          install.packages("MortalityTables", repos = 'https://cran.r-project.org')
-          install.packages("LexisPlotR", repos = 'https://cran.r-project.org')
-          install.packages("Rcpp", repos = 'https://cran.r-project.org')
+          install.packages("jsonlite", repos = 'https://cran.r-project.org')
+          install.packages("rmarkdown", repos = 'https://cran.r-project.org')
+          install.packages("ggplot2", repos = 'https://cran.r-project.org')
+          install.packages("dplyr", repos = 'https://cran.r-project.org')
           q()
           EOF
           echo STARTING WITH THE PROJECT
@@ -49,10 +41,20 @@ jobs:
           
           
           
-     #     install.packages(c("Rglpk","ROI","lpsolve","CVXR","linprog","Rsolnp","ucminf"))
-     #     install.packages(c("Rcpp",))
-     #     install.packages(c("LexisPlotR","MortalityTables"))
-          
+# R Packages
+
+   #       install.packages("knitr", repos = 'https://cran.r-project.org')
+   #       install.packages("tinytex", repos = 'https://cran.r-project.org')
+   #       install.packages("ROI", repos = 'https://cran.r-project.org')
+   #       install.packages("Rglpk", repos = 'https://cran.r-project.org')
+   #       install.packages("lpsolve", repos = 'https://cran.r-project.org')
+   #       install.packages("CVXR", repos = 'https://cran.r-project.org')
+   #       install.packages("linprog", repos = 'https://cran.r-project.org')
+   #       install.packages("Rsolnp", repos = 'https://cran.r-project.org')
+   #       install.packages("ucminf", repos = 'https://cran.r-project.org')
+   #       install.packages("MortalityTables", repos = 'https://cran.r-project.org')
+   #       install.packages("LexisPlotR", repos = 'https://cran.r-project.org')
+   #       install.packages("Rcpp", repos = 'https://cran.r-project.org')
           
           
           
