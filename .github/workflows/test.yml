@@ -7,15 +7,11 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    container: jpgomezz/quatro:seis
+    container: jpgomezz/quatro:siete
     steps:            
       - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
       - run: |
-          sudo R --vanilla <<EOF
-          install.packages("knitr", repos = 'https://cran.r-project.org')
-          q()
-          EOF
           quarto --version
           sudo apt-get install tree
           echo STARTING WITH THE PROJECT
@@ -31,7 +27,10 @@ jobs:
           ls -l /__w/quarto-actions/quarto-actions/
           
           
-          
+  #        sudo R --vanilla <<EOF
+  #        install.packages("knitr", repos = 'https://cran.r-project.org')
+  #        q()
+  #        EOF
           
           
           
