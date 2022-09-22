@@ -14,6 +14,8 @@ jobs:
       - run: |
           quarto --version
           sudo apt-get install tree
+          sudo apt update; sudo apt-get install
+          sudo apt install python3-pip python3-dev; pip install jupyter; pip install numpy; pip install matplotlib
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
           sudo mkdir proyectito; cd proyectito
