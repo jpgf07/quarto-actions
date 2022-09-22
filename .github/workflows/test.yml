@@ -19,10 +19,10 @@ jobs:
           cd /
           echo listing ROOT
           ls -l
-          echo TREE usr/local/lib
-          tree usr/local/lib
-          echo TREE usr/lib/R
-          tree usr/lib/R
+          echo TREE usr/local/lib/R/site-library
+          tree usr/local/lib/R/site-library
+          echo TREE usr/lib/R/library
+          tree usr/lib/R/library
 
 
 #          sudo mkdir proyectito; cd proyectito
