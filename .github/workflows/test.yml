@@ -14,7 +14,8 @@ jobs:
       - run: |
           quarto --version
           sudo apt-get install tree
-          sudo apt-get install r-base
+          sudo apt-get update -y
+          sudo apt-get install r-base -y
           pip3 install jupyterlab
           sudo R --vanilla <<EOF
           install.packages("knitr", repos = 'https://cran.r-project.org')
