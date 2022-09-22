@@ -15,6 +15,7 @@ jobs:
       - run: |
           quarto --version
           sudo apt-get install tree
+          sudo apt-get install r-base r-base-dev
           echo PERFORMING LIBRARIES ADJUSTMENT
           cd /opt/R/4.2.1/lib/R/
           rm -rf library
