@@ -15,13 +15,12 @@ jobs:
       - run: |
           quarto --version
           sudo apt-get install tree
-          sudo apt-get install r-base r-base-dev -y
           echo PERFORMING LIBRARIES ADJUSTMENT
-          cd /opt/R/4.2.1/lib/R/
-          rm -rf library
-          ln -s /usr/local/lib/R/site-library library
+          cd /__w/_temp/
+          rm -rf Library
+          ln -s /usr/local/lib/R/site-library Library
           echo SHOW SITE LIBRARIES TREE
-          tree /opt/R/4.2.1/lib/R/library
+          tree /__w/_temp/Library
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
           sudo mkdir proyectito; cd proyectito
