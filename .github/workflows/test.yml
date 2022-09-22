@@ -17,11 +17,13 @@ jobs:
           quarto --version
           quarto create-project myproject; cd myproject; rm _quarto.yml
           quarto create-project myproject; cd myproject; rm _quarto.yml
-          mv /__w/quarto-actions/quarto-actions/_quarto.yml /__w/quarto-actions/quarto-actions/myproject/_quarto.yml
+          mv /__w/quarto-actions/quarto-actions/_quarto.yml /__w/quarto-actions/quarto-actions/myproject/myproyect/_quarto.yml
           mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/myproject/markdown
           quarto render --to html  
+          echo FULL TREE
           tree /__w/quarto-actions/quarto-actions/
-
+          echo LIST quarto-actions FOLDER
+          ls - /__w/quarto-actions/quarto-actions/
 
 
 
