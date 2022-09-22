@@ -21,15 +21,14 @@ jobs:
           ln -s /usr/local/lib/R/site-library library
           echo SHOW SITE LIBRARIES TREE
           tree /opt/R/4.2.1/lib/R/library
-
-
-
-#          sudo mkdir proyectito; cd proyectito
-#          quarto create-project myproject; cd myproject; rm _quarto.yml
-#          mv /__w/quarto-actions/quarto-actions/_quarto.yml  /__w/quarto-actions/quarto-actions/proyectito/myproject
-#          mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/proyectito/myproject/markdown       
-#          quarto render --to html 
-#          echo FULL TREE
-#          tree /__w/quarto-actions/quarto-actions/
-#          echo LIST quarto-actions FOLDER
-#          ls -l /__w/quarto-actions/quarto-actions/
+          echo STARTING WITH THE PROJECT
+          cd /__w/quarto-actions/quarto-actions/
+          sudo mkdir proyectito; cd proyectito
+          quarto create-project myproject; cd myproject; rm _quarto.yml
+          mv /__w/quarto-actions/quarto-actions/_quarto.yml  /__w/quarto-actions/quarto-actions/proyectito/myproject
+          mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/proyectito/myproject/markdown       
+          quarto render --to html 
+          echo FULL TREE
+          tree /__w/quarto-actions/quarto-actions/
+          echo LIST quarto-actions FOLDER
+          ls -l /__w/quarto-actions/quarto-actions/
