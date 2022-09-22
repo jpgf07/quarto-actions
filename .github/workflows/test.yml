@@ -27,6 +27,7 @@ jobs:
           tree /__w/quarto-actions/quarto-actions/
           echo LIST quarto-actions FOLDER
           ls -l /__w/quarto-actions/quarto-actions/
+          R --version
           
           
   #        sudo R --vanilla <<EOF
