@@ -11,14 +11,7 @@ jobs:
     steps:            
       - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
-      - uses: r-lib/actions/setup-r@v2
       - run: |
-          sudo R --vanilla <<EOF
-          install.packages("rmarkdown", repos = 'https://cran.r-project.org')
-          install.packages("ggplot2", repos = 'https://cran.r-project.org')
-          install.packages("dplyr", repos = 'https://cran.r-project.org')
-          q()
-          EOF
           quarto --version
           sudo apt-get install tree
           echo PERFORMING LIBRARIES ADJUSTMENT
@@ -42,3 +35,48 @@ jobs:
           tree /__w/quarto-actions/quarto-actions/
           echo LIST quarto-actions FOLDER
           ls -l /__w/quarto-actions/quarto-actions/
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+    #      - uses: r-lib/actions/setup-r@v2
+    
+    
+          
+     #     sudo R --vanilla <<EOF
+     #     install.packages("rmarkdown", repos = 'https://cran.r-project.org')
+     #     install.packages("ggplot2", repos = 'https://cran.r-project.org')
+     #     install.packages("dplyr", repos = 'https://cran.r-project.org')
+     #     q()
+     #     EOF
+     #     quarto --version
+     #    sudo apt-get install tree
+     #     echo PERFORMING LIBRARIES ADJUSTMENT
+     #     cd /__w/_temp/
+     #     rm -rf Library
+     #     ln -s /usr/local/lib/R/site-library Library
+     #     echo PERFORMING 2ND LIBRARIES ADJUSTMENT
+     #     cd /usr/local/lib/R/
+     #     rm -rf site-library
+     #     ln -s /usr/local/lib/R/site-library site-library
+     #     echo SHOW SITE LIBRARIES TREE
+     #     tree /usr/local/lib/R/site-library
+     #     echo STARTING WITH THE PROJECT
+     #     cd /__w/quarto-actions/quarto-actions/
+     #     sudo mkdir proyectito; cd proyectito
+     #     quarto create-project myproject; cd myproject; rm _quarto.yml
+     #     mv /__w/quarto-actions/quarto-actions/_quarto.yml  /__w/quarto-actions/quarto-actions/proyectito/myproject
+     #     mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/proyectito/myproject/markdown  
+     #     quarto render --to html 
+     #     echo FULL TREE
+     #     tree /__w/quarto-actions/quarto-actions/
+     #     echo LIST quarto-actions FOLDER
+     #     ls -l /__w/quarto-actions/quarto-actions/
