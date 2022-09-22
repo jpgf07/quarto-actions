@@ -19,7 +19,8 @@ jobs:
           cd /
           echo listing ROOT
           ls -l
-          
+          echo TREE USR
+          tree usr
 
 
 #          sudo mkdir proyectito; cd proyectito
