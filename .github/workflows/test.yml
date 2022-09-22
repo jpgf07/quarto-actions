@@ -19,7 +19,7 @@ jobs:
           echo DIRECTORIES
           pwd
           ls -l
-          tree /__w/quarto-actions/quarto-actions/myproject
+          tree /__w/quarto-actions/quarto-actions/
 
 
 #          quarto create-project myproject; cd myproject; rm _quarto.yml
