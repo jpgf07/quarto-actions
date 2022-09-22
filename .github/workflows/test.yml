@@ -18,7 +18,13 @@ jobs:
           sudo R --vanilla <<EOF 
           install.packages("knitr", repos = 'https://cran.r-project.org')
           install.packages("tinytex", repos = 'https://cran.r-project.org')
+          install.packages("ROI", repos = 'https://cran.r-project.org')
           install.packages("Rglpk", repos = 'https://cran.r-project.org')
+          install.packages("lpsolve", repos = 'https://cran.r-project.org')
+          install.packages("CVXR", repos = 'https://cran.r-project.org')
+          install.packages("linprog", repos = 'https://cran.r-project.org')
+          install.packages("Rsolnp", repos = 'https://cran.r-project.org')
+          install.packages("ucminf", repos = 'https://cran.r-project.org')
           q()
           EOF
           echo STARTING WITH THE PROJECT
