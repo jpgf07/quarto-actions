@@ -14,7 +14,6 @@ jobs:
       - run: |
           quarto --version
           sudo apt-get install tree
-          pandoctools-ready
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
           sudo mkdir proyectito; cd proyectito
