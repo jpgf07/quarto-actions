@@ -15,6 +15,7 @@ jobs:
       - run: |
           sudo apt-get install tree
           quarto --version
+          sudo mkdir proyectito; cd proyectito
           quarto create-project myproject; cd myproject; rm _quarto.yml 
           echo FULL TREE
           tree /__w/quarto-actions/quarto-actions/
