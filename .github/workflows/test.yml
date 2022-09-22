@@ -14,6 +14,13 @@ jobs:
       - run: |
           quarto --version
           sudo apt-get install tree
+          sudo R --vanilla <<EOF 
+          install.packages("jsonlite", repos = 'https://cran.r-project.org')
+          install.packages("rmarkdown", repos = 'https://cran.r-project.org')
+          install.packages("ggplot2", repos = 'https://cran.r-project.org')
+          install.packages("dplyr", repos = 'https://cran.r-project.org')
+          q()
+          EOF
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
           sudo mkdir proyectito; cd proyectito
