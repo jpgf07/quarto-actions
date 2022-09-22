@@ -12,22 +12,19 @@ jobs:
       - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
       - run: |
-          quarto --version
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
-          sudo mkdir proyectito; cd proyectito
-          quarto create-project myproject; cd myproject; rm _quarto.yml
+          sudo mkdir proyectito; cd proyectito; quarto create-project myproject; cd myproject; rm _quarto.yml
           mv /__w/quarto-actions/quarto-actions/_quarto.yml  /__w/quarto-actions/quarto-actions/proyectito/myproject
           mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/proyectito/myproject/markdown  
+          echo RENDERING WITH QUARTO
           quarto render --to html 
-          R --version
-          pandoc --version
           
-          
-          
-          
-          
-  
+   
+   
+   
+   
+  #        quarto --version
   #        echo FULL TREE
   #        tree /__w/quarto-actions/quarto-actions/
   #        echo LIST quarto-actions FOLDER
@@ -57,9 +54,7 @@ jobs:
           
           
           
-          
     #      - uses: r-lib/actions/setup-r@v2
-    
     
           
      #     sudo R --vanilla <<EOF
@@ -69,7 +64,7 @@ jobs:
      #     q()
      #     EOF
      #     quarto --version
-     #    sudo apt-get install tree
+     #     sudo apt-get install tree
      #     echo PERFORMING LIBRARIES ADJUSTMENT
      #     cd /__w/_temp/
      #     rm -rf Library
