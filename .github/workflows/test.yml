@@ -15,7 +15,8 @@ jobs:
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
           sudo mkdir proyectito; cd proyectito; quarto create-project myproject; cd myproject; rm _quarto.yml
-          mv /__w/quarto-actions/quarto-actions/_quarto.yml  /__w/quarto-actions/quarto-actions/proyectito/myproject 
+          mv /__w/quarto-actions/quarto-actions/_quarto.yml  /__w/quarto-actions/quarto-actions/proyectito/myproject
+          mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/proyectito/myproject/markdown
           echo RENDERING WITH QUARTO
           quarto render --to html 
           
