@@ -25,6 +25,9 @@ jobs:
           install.packages("linprog", repos = 'https://cran.r-project.org')
           install.packages("Rsolnp", repos = 'https://cran.r-project.org')
           install.packages("ucminf", repos = 'https://cran.r-project.org')
+          install.packages("MortalityTables", repos = 'https://cran.r-project.org')
+          install.packages("LexisPlotR", repos = 'https://cran.r-project.org')
+          install.packages("Rcpp", repos = 'https://cran.r-project.org')
           q()
           EOF
           echo STARTING WITH THE PROJECT
