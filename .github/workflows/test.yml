@@ -24,11 +24,10 @@ jobs:
           install.packages("dplyr", repos = 'https://cran.r-project.org')
           q()
           EOF
+          sudo apt install python3-pip python3-dev; pip install jupyter; pip install numpy; pip install matplotlib
           quarto create-project myproject; cd myproject; rm _quarto.yml
-          mv /__w/quarto-actions/quarto-actions/_quarto.yml /__w/quarto-actions/quarto-actions//myproject/_quarto.yml
-          mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/myproject/markdown
-          quarto render --to html
-          echo list my files directories
-          tree /__w/quarto-actions/quarto-actions/
+          mv ~/work/quatrotest/quatrotest/_quarto.yml ~/work/quatrotest/quatrotest/myproject/_quarto.yml
+          mv ~/work/quatrotest/quatrotest/markdown ~/work/quatrotest/quatrotest/myproject/markdown
+          quarto render --to html 
 
 
