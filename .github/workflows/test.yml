@@ -15,6 +15,7 @@ jobs:
       - run: |
           sudo R --vanilla <<EOF
           install.packages("rmarkdown", repos = 'https://cran.r-project.org')
+          install.packages("ggplot2", repos = 'https://cran.r-project.org')
           q()
           EOF
           quarto --version
