@@ -15,8 +15,7 @@ jobs:
       - run: |
           quarto --version
           sudo R --vanilla <<EOF
-          install.packages("rmarkdown", repos = 'https://cran.r-project.org')
-          install.packages("jsonlite", repos = 'https://cran.r-project.org')
+          .libPaths()
           q()
           EOF 
           sudo apt-get install tree
