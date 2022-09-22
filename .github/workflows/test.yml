@@ -15,14 +15,13 @@ jobs:
       - run: |
           quarto --version
           sudo apt-get install tree
-          echo MOVING TO ROOT
-          cd /
-          echo listing ROOT
-          ls -l
-          echo TREE usr/local/lib/R/site-library
-          tree usr/local/lib/R/site-library
-          echo TREE usr/lib/R/library
-          tree usr/lib/R/library
+          echo PERFORMING LIBRARIES ADJUSTMENT
+          cd /opt/R/4.2.1/lib/R/
+          rm -rf library
+          ln -s /usr/local/lib/R/site-library library
+          echo SHOW SITE LIBRARIES TREE
+          tree /opt/R/4.2.1/lib/R/library
+
 
 
 #          sudo mkdir proyectito; cd proyectito
