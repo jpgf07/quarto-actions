@@ -19,8 +19,12 @@ jobs:
           cd /__w/_temp/
           rm -rf Library
           ln -s /usr/local/lib/R/site-library Library
+          echo PERFORMING 2ND LIBRARIES ADJUSTMENT
+          cd /usr/local/lib/R/
+          rm -rf site-library
+          ln -s /usr/local/lib/R/site-library site-library
           echo SHOW SITE LIBRARIES TREE
-          tree /__w/_temp/Library
+          tree /usr/local/lib/R/site-library
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
           sudo mkdir proyectito; cd proyectito
