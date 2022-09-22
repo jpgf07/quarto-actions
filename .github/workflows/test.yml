@@ -16,7 +16,7 @@ jobs:
           sudo apt-get install tree
           pip3 install jupyterlab
           sudo R --vanilla <<EOF
-          updateR()
+          update.packages(ask = FALSE)
           install.packages("knitr", repos = 'https://cran.r-project.org')
           install.packages("tinytex", repos = 'https://cran.r-project.org')
           install.packages("ROI", repos = 'https://cran.r-project.org')
