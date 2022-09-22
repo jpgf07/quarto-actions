@@ -14,9 +14,10 @@ jobs:
       - run: |
           quarto --version
           sudo apt-get install tree
-          sudo apt-get update -y; sudo apt-get upgrade -y;
+          sudo apt-get update -y; sudo apt-get upgrade -y; sudo apt-get install r-base r-base-dev
           sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
           sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+          sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+; sudo apt update; sudo apt-get install -y r-cran-jsonlite
           sudo R --vanilla <<EOF 
           install.packages("knitr", repos = 'https://cran.r-project.org')
           q()
