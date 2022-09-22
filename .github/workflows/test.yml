@@ -17,6 +17,10 @@ jobs:
           pip3 install jupyterlab
           sudo R --vanilla <<EOF 
           install.packages("knitr", repos = 'https://cran.r-project.org')
+          install.packages("tinytex", repos = 'https://cran.r-project.org')
+          install.packages(c("Rglpk","ROI","lpsolve","CVXR","linprog","Rsolnp","ucminf"))
+          install.packages(c("Rcpp",))
+          install.packages(c("LexisPlotR","MortalityTables"))
           q()
           EOF
           echo STARTING WITH THE PROJECT
