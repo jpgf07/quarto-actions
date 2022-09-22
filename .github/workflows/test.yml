@@ -28,6 +28,7 @@ jobs:
           echo LIST quarto-actions FOLDER
           ls -l /__w/quarto-actions/quarto-actions/
           R --version
+          pandoc --version
           
           
   #        sudo R --vanilla <<EOF
