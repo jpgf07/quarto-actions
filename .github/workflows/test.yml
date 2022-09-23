@@ -24,7 +24,10 @@ jobs:
           echo LIST NEW FILTER IN quarto-pre
           ls -l /opt/quarto/share/filters/quarto-pre/
           tree /__w/
-
+          echo STARTING WITH THE PROJECT
+          cd /__w/quarto-actions/quarto-actions/
+          quarto render --to html
+          tree public/markdown/
 
           
           
