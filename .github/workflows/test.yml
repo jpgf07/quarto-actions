@@ -19,7 +19,7 @@ jobs:
           tree /__w/
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
-          quarto render --to html
+          quarto preview --to html
           tree public/markdown/
  
  # - uses: quarto-dev/quarto-actions/setup@v2
