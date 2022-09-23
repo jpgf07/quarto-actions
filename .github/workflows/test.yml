@@ -7,9 +7,8 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    container: jpgomezz/quatro:np
+    container: jpgomezz/quatro:action
     steps:            
-      - uses: actions/checkout@v2
       - uses: quarto-dev/quarto-actions/setup@v2
       - run: |
           sudo apt-get update
@@ -19,7 +18,7 @@ jobs:
           quarto render --to html
           tree public/markdown/
  
-
+ # - uses: actions/checkout@v2
    
    
   # PREVIOUS WORKING BUILD 
