@@ -18,7 +18,7 @@ jobs:
           ls -l
           echo MODIFYING LUA FILTERS
           cd /opt/quarto/share/filters/quarto-pre/; rm quarto-pre.lua
-          cp ./quarto-pre.lua /opt/quarto/share/filters/quarto-pre/
+          cp /quarto-pre.lua /opt/quarto/share/filters/quarto-pre/
           echo list files 
           ls -l /opt/quarto/share/filters/quarto-pre/
           tree /__w/
