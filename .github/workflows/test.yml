@@ -10,7 +10,7 @@ jobs:
     container: jpgomezz/quatro:np
     steps:            
       - uses: actions/checkout@v2
-      - uses: quarto-dev/quarto-actions/setup@latest
+      - uses: quarto-dev/quarto-actions/setup@v2.0.3
       - run: |
           sudo apt-get update
           sudo apt-get install tree
