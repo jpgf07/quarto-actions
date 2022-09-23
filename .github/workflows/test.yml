@@ -16,9 +16,9 @@ jobs:
           echo LISTING FILES
           pwd
           ls -l
+          tree /__w/
           echo STARTING WITH THE PROJECT
-          quarto render --to html
-          tree public/markdown/
+
  
  # - uses: actions/checkout@v2
    
