@@ -10,6 +10,8 @@ jobs:
     container: jpgomezz/quatro:action
     steps:            
       - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          path: '/__w/quarto-actions/quarto-actions'
       - run: |
           sudo apt-get update
           sudo apt-get install tree
