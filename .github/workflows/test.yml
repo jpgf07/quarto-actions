@@ -27,7 +27,7 @@ jobs:
         run: |
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
-          terminus connection:set
+          terminus connection:set jptest1.dev sftp
 
 
 
