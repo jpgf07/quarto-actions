@@ -14,6 +14,13 @@ jobs:
           echo STARTING WITH THE PROJECT
 
 
+      - name: Prepare Environment
+        env:
+          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEPANTHEONKEY }}
+          SSH_PATH: /github/home/.ssh
+          SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
+          
+
       - name: Installing PHP
         uses: shivammathur/setup-php@master
         with:
@@ -30,25 +37,22 @@ jobs:
           cd ~
           echo PRINT HOME DIRECTORY
           pwd
-          echo LOOKING FOR KEYS
-          ls /github/home/.ssh
+          echo KEYS
+          mkdir -p $SSH_PATH
+          echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
+          chmod 700 "$SSH_PATH"
+          chmod 600 "$SSH_KEY_PRIVATE_PATH"
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
           terminus help remote:rsync
-   #      terminus rsync /__w/quarto-actions/quarto-actions/ jptest1.dev:files
+          terminus rsync /__w/quarto-actions/quarto-actions/ jptest1.dev:files
          
 
       
       
       
       
-  #    - name: Prepare Environment
-  #      env:
-  #        SSH_KEY_PRIVATE: ${{ secrets.PRIVATEPANTHEONKEY }}
-  #        SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-  #        SSH_PATH: /home/runner/.ssh
-  #        SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
-  #        SSH_KEY_PUBLIC_PATH: /home/runner/.ssh/id_rsa.pub
+
       
     
     
