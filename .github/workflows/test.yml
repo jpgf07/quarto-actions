@@ -32,7 +32,7 @@ jobs:
         if: success()
         run: |
           terminus site:list
-      
+          terminus connection:info --format FORMAT --fields FIELDS --field FIELD -- jptest1.Dev
       
       
       
