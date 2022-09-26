@@ -34,7 +34,7 @@ jobs:
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
           terminus help remote:rsync
-          
+          remote:rsync public/markdown/ jptest1.dev:testfiles
           
       # terminus rsync jptest1.dev:files .
       
