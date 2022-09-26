@@ -30,6 +30,8 @@ jobs:
           cd ~
           echo PRINT HOME DIRECTORY
           pwd
+          echo LOOKING FOR KEYS
+          ls /github/home/.ssh
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
           terminus help remote:rsync
