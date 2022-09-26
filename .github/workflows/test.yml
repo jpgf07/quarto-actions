@@ -10,15 +10,16 @@ jobs:
     container: jpgomezz/quarto:final
     steps:            
       - uses: actions/checkout@v2
-      - run: |
-          echo STARTING WITH THE PROJECT
-
-
       - name: Prepare Environment
         env:
           SSH_KEY_PRIVATE: ${{ secrets.PRIVATEPANTHEONKEY }}
           SSH_PATH: /github/home/.ssh
           SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
+      - run: |
+          echo STARTING WITH THE PROJECT
+
+
+
           
         
       - name: Installing PHP
