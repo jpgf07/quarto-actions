@@ -18,6 +18,26 @@ jobs:
           quarto render --to html
           tree public/markdown/
 
+      - uses: actions/checkout@master
+      - name: Installing PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: '7.3'
+      - name: Installing Terminus
+        uses: kopepasah/setup-pantheon-terminus@master
+        with:
+          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+      - name: Listing Sites
+        if: success()
+        run: terminus site:list
+      
+      
+      
+      
+      
+      
+      
+      
           
           
      #     sudo apt-get update
