@@ -32,6 +32,7 @@ jobs:
         if: success()
         run: |
           terminus site:list
+          terminus self:plugin:install terminus-rsync-plugin
           terminus rsync jptest1.dev:files .
       
       
