@@ -33,7 +33,10 @@ jobs:
         run: |
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
-          terminus rsync jptest1.dev:files .
+          terminus help remote:rsync
+          
+          
+      # terminus rsync jptest1.dev:files .
       
       
       
