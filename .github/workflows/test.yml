@@ -14,14 +14,6 @@ jobs:
           echo STARTING WITH THE PROJECT
 
 
-      - name: Prepare Environment
-        env:
-          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEPANTHEONKEY }}
-          SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-          SSH_PATH: /home/runner/.ssh
-          SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
-          SSH_KEY_PUBLIC_PATH: /home/runner/.ssh/id_rsa.pub
-          
       
       - uses: actions/checkout@master
       - name: Installing PHP
