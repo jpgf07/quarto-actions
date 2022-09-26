@@ -33,10 +33,7 @@ jobs:
         run: |
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
-          terminus rsync /__w/quarto-actions/quarto-actions/ jptest1.dev:files
-         
-         
-         
+          terminus rsync -e "ssh -i $HOME/.ssh/somekey" /__w/quarto-actions/quarto-actions/ jptest1.dev:files -e 
          
      # terminus self:plugin:install terminus-rsync-plugin
      # terminus rsync /__w/quarto-actions/quarto-actions/ ${{ secrets.ENVSITE }}@${{ secrets.DEVSITE }}:files     
