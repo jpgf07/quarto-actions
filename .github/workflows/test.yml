@@ -10,7 +10,6 @@ jobs:
     container: jpgomezz/quarto:final
     steps:            
       - uses: actions/checkout@v2
-      - name: Prepare Environment
         env:
           SSH_KEY_PRIVATE: ${{ secrets.PRIVATEPANTHEONKEY }}
           SSH_PATH: /github/home/.ssh
