@@ -33,9 +33,11 @@ jobs:
         run: |
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
-          terminus rsync /__w/quarto-actions/quarto-actions/ jptest1.dev:files
-         
-         
+          terminus rsync -rLvz --size-only --checksum --ipv4 --progress -e 'ssh -p 2222' /__w/quarto-actions/quarto-actions/ ${{ secrets.ENVSITE }}@${{ secrets.DEVSITE }}:files
+          
+          
+          
+     # terminus rsync /__w/quarto-actions/quarto-actions/ jptest1.dev:files (Failed to authenticate)
      # terminus help remote:rsync
      # terminus import:files jptest1.dev /__w/quarto-actions/quarto-actions/ -y
      # terminus rsync /__w/quarto-actions/quarto-actions/ jptest1.dev:files
