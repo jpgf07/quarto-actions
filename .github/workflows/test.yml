@@ -26,6 +26,12 @@ jobs:
         if: success()
         run: |
           terminus site:list
+          terminus import:files /__w/quarto-actions/quarto-actions/ jptest1.dev:files
+
+
+
+
+
 
 
       
