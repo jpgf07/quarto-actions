@@ -33,7 +33,7 @@ jobs:
         run: |
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
-          terminus rsync -rLvz --size-only --checksum --ipv4 --progress -e 'ssh -p 2222' /__w/quarto-actions/quarto-actions/ ${{ secrets.ENVSITE }}@${{ secrets.DEVSITE }}:files
+          terminus rsync /__w/quarto-actions/quarto-actions/ ${{ secrets.ENVSITE }}@${{ secrets.DEVSITE }}:files
           
           
           
