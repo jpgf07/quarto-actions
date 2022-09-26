@@ -27,7 +27,7 @@ jobs:
         run: |
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
-          auth:whoami
+          terminus auth:whoami
 
 
 
