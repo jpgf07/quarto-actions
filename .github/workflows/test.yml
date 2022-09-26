@@ -17,8 +17,6 @@ jobs:
       - run: |
           echo STARTING WITH THE PROJECT
 
-
-
           
         
       - name: Installing PHP
@@ -38,7 +36,7 @@ jobs:
           echo PRINT HOME DIRECTORY
           pwd
           echo KEYS
-          mkdir -p $SSH_PATH
+          mkdir -p /github/home/.ssh
           echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
           chmod 700 "$SSH_PATH"
           chmod 600 "$SSH_KEY_PRIVATE_PATH"
