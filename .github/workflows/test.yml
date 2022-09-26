@@ -23,7 +23,7 @@ jobs:
       - name: Installing PHP
         uses: shivammathur/setup-php@master
         with:
-          php-version: '7.3'
+          php-version: '8.1'
       - name: Installing Terminus
         uses: kopepasah/setup-pantheon-terminus@master
         with:
