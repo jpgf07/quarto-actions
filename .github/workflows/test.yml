@@ -10,15 +10,10 @@ jobs:
     container: jpgomezz/quarto:final
     steps:            
       - uses: actions/checkout@v2
-        env:
-          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEPANTHEONKEY }}
-          SSH_PATH: /github/home/.ssh
-          SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
       - run: |
           echo STARTING WITH THE PROJECT
 
-          
-        
+
       - name: Installing PHP
         uses: shivammathur/setup-php@master
         with:
@@ -30,18 +25,9 @@ jobs:
       - name: Listing Sites
         if: success()
         run: |
-          echo PRINT WORKING DIRECTORY
-          pwd
-          cd ~
-          echo PRINT HOME DIRECTORY
-          pwd
-          echo KEYS
-          sudo mkdir -p /github/home/.ssh
-          sudo echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
-          sudo chmod 700 "$SSH_PATH"
-          sudo chmod 600 "$SSH_KEY_PRIVATE_PATH"
-          echo LIST EM Ks
-          ls -l /github/home/.ssh
+          terminus site:list
+
+
       
       
       #   terminus site:list
