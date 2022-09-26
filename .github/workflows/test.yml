@@ -32,7 +32,7 @@ jobs:
         if: success()
         run: |
           terminus site:list
-          terminus connection:info --format FORMAT --fields FIELDS --field FIELD -- jptest1.Dev
+          terminus connection:info --format FORMAT --fields FIELDS --field FIELD -- jptest1.dev
       
       
       
@@ -41,38 +41,14 @@ jobs:
       
       
           
-          
-     #     sudo apt-get update
-     #     sudo apt-get install tree
-     #     echo LISTING FILES
-     #     pwd
-     #     ls -l
-     #     echo MODIFYING LUA FILTERS
-     #     cd /opt/quarto/share/filters/quarto-pre/; rm quarto-pre.lua
-     #     cp /__w/quarto-actions/quarto-actions/quarto-pre.lua /opt/quarto/share/filters/quarto-pre/
-     #     echo list files 
-     #     ls -l /opt/quarto/share/filters/quarto-pre/
-     #     tree /__w/
-     #     echo STARTING WITH THE PROJECT
-     #     cd /__w/quarto-actions/quarto-actions/
-     #     quarto render --to html
-     #     tree public/markdown/
-          
-          
-          
- 
- # - uses: quarto-dev/quarto-actions/setup@v2
-   
-     #     sudo apt-get update
-     #     sudo apt-get install tree
-     #     echo STARTING WITH THE PROJECT
-     #     cd /__w/quarto-actions/quarto-actions/
-     #     quarto render --to html
-     #     tree public/markdown/
+
+
    
    
    
   # PREVIOUS WORKING BUILD 
+  #        sudo apt-get update
+  #        sudo apt-get install tree
   #        echo STARTING WITH THE PROJECT
   #        cd /__w/quarto-actions/quarto-actions/
   #        sudo mkdir proyectito; cd proyectito; quarto create-project myproject; cd myproject; rm _quarto.yml
@@ -80,68 +56,7 @@ jobs:
   #        mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/proyectito/myproject/markdown  
   #        echo RENDERING WITH QUARTO
   #        quarto render --to html 
+  #        tree public/markdown/
   # UP TO HERE - CROSSREF WARININGS
    
-   
-  #        quarto --version
-  #        echo FULL TREE
-  #        tree /__w/quarto-actions/quarto-actions/
-  #        echo LIST quarto-actions FOLDER
-  #        ls -l /__w/quarto-actions/quarto-actions/
-          
-  #        sudo R --vanilla <<EOF
-  #        install.packages("knitr", repos = 'https://cran.r-project.org')
-  #        q()
-  #        EOF
-          
-          
-          
-# R Packages
-
-   #       install.packages("knitr", repos = 'https://cran.r-project.org')
-   #       install.packages("tinytex", repos = 'https://cran.r-project.org')
-   #       install.packages("ROI", repos = 'https://cran.r-project.org')
-   #       install.packages("Rglpk", repos = 'https://cran.r-project.org')
-   #       install.packages("lpsolve", repos = 'https://cran.r-project.org')
-   #       install.packages("CVXR", repos = 'https://cran.r-project.org')
-   #       install.packages("linprog", repos = 'https://cran.r-project.org')
-   #       install.packages("Rsolnp", repos = 'https://cran.r-project.org')
-   #       install.packages("ucminf", repos = 'https://cran.r-project.org')
-   #       install.packages("MortalityTables", repos = 'https://cran.r-project.org')
-   #       install.packages("LexisPlotR", repos = 'https://cran.r-project.org')
-   #       install.packages("Rcpp", repos = 'https://cran.r-project.org')
-          
-          
-          
-    #      - uses: r-lib/actions/setup-r@v2
-    
-          
-     #     sudo R --vanilla <<EOF
-     #     install.packages("rmarkdown", repos = 'https://cran.r-project.org')
-     #     install.packages("ggplot2", repos = 'https://cran.r-project.org')
-     #     install.packages("dplyr", repos = 'https://cran.r-project.org')
-     #     q()
-     #     EOF
-     #     quarto --version
-     #     sudo apt-get install tree
-     #     echo PERFORMING LIBRARIES ADJUSTMENT
-     #     cd /__w/_temp/
-     #     rm -rf Library
-     #     ln -s /usr/local/lib/R/site-library Library
-     #     echo PERFORMING 2ND LIBRARIES ADJUSTMENT
-     #     cd /usr/local/lib/R/
-     #     rm -rf site-library
-     #     ln -s /usr/local/lib/R/site-library site-library
-     #     echo SHOW SITE LIBRARIES TREE
-     #     tree /usr/local/lib/R/site-library
-     #     echo STARTING WITH THE PROJECT
-     #     cd /__w/quarto-actions/quarto-actions/
-     #     sudo mkdir proyectito; cd proyectito
-     #     quarto create-project myproject; cd myproject; rm _quarto.yml
-     #     mv /__w/quarto-actions/quarto-actions/_quarto.yml  /__w/quarto-actions/quarto-actions/proyectito/myproject
-     #     mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/proyectito/myproject/markdown  
-     #     quarto render --to html 
-     #     echo FULL TREE
-     #     tree /__w/quarto-actions/quarto-actions/
-     #     echo LIST quarto-actions FOLDER
-     #     ls -l /__w/quarto-actions/quarto-actions/
+ 
