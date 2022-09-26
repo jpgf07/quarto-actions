@@ -27,7 +27,7 @@ jobs:
         run: |
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
-          terminus rsync ./__w/quarto-actions/quarto-actions/ jptest1.dev:files
+          terminus rsync jptest1.dev:files .
 
 
 
