@@ -30,7 +30,8 @@ jobs:
           pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
       - name: Listing Sites
         if: success()
-        run: terminus site:list
+        run: |
+          terminus site:list
       
       
       
