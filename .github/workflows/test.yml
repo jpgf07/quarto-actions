@@ -34,7 +34,7 @@ jobs:
           terminus site:list
           terminus self:plugin:install terminus-rsync-plugin
           terminus help remote:rsync
-          terminus import:files jptest1.dev /__w/quarto-actions/quarto-actions/
+          terminus import:files jptest1.dev:files /__w/quarto-actions/quarto-actions/
       
       
       # terminus rsync /__w/quarto-actions/quarto-actions/ jptest1.dev:files
