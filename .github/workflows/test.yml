@@ -15,8 +15,8 @@ jobs:
  
       - name: Prepare Environment
         run:
-         ENV=dev
-         export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528
+         ENV=dev;
+         export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528;
          sftp -oPort=2222 $ENV.$SITE@appserver.$ENV.$SITE.drush.in
          
           
