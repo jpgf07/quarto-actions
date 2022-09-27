@@ -14,7 +14,19 @@ jobs:
           echo STARTING WITH THE PROJECT
  
       - name: Prepare Environment
+        env:
+         SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
+         SH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
+         SSH_PATH: /github/home/.ssh
+         KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
+         SSH_KEY_PRIVATE_PATH: /github/home/.ssh/id_rsa
+         SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
         run:
+         mkdir /github/home/.ssh/;
+         touch "$SSH_KEY_PRIVATE_PATH";
+         touch "SSH_KEY_PUBLIC_PATH";
+         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
+         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
          ENV=dev;
          export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528;
          sftp -i /github/home/.ssh/id_rsa.pub -oPort=2222 $ENV.$SITE@appserver.$ENV.$SITE.drush.in
