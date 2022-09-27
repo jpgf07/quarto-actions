@@ -31,7 +31,7 @@ jobs:
          chmod 644 "$KNOWN_HOSTS_PATH";
          chmod 600 "$SSH_KEY_PRIVATE_PATH";
          chmod 644 "$SSH_KEY_PUBLIC_PATH";
-         cat $SSH_CONFIG
+         cat $SSH_CONFIG;
          sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
          
          
