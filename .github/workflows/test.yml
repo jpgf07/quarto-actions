@@ -14,27 +14,11 @@ jobs:
           echo STARTING WITH THE PROJECT
  
       - name: Prepare Environment
-        env:
-         SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-         SH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
-         SSH_PATH: /github/home/.ssh
-         KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
-         SSH_KEY_PRIVATE_PATH: /github/home/.ssh/id_rsa
-         SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
         run:
-          mkdir /github/home/.ssh; 
-          ls -la /github/home/.ssh;
-          echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
-          echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
-          echo .ssh cd to and list;
-          ls -la /github/home/.ssh;
-          touch /github/home/.ssh/known_hosts;
-          echo CAT KNOWN_HOSTS;
-          cat /github/home/.ssh/known_hosts;
-          ssh -o "IdentitiesOnly=yes" -i "$SSH_KEY_PUBLIC_PATH" appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
- #       ssh -T appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
-  #       sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
-          
+         ENV=dev
+         export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528
+         sftp -oPort=2222 $ENV.$SITE@appserver.$ENV.$SITE.drush.in
+         
           
 
 
@@ -52,6 +36,15 @@ jobs:
  #         terminus site:list
 
 
+
+  #    - name: Prepare Environment
+  #      env:
+  #       SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
+  #       SH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
+  #       SSH_PATH: /github/home/.ssh
+  #       KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
+  #       SSH_KEY_PRIVATE_PATH: /github/home/.ssh/id_rsa
+  #       SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
 
 
     
