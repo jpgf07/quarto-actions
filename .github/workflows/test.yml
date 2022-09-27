@@ -23,13 +23,16 @@ jobs:
          SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
          SSH_CONFIG: /github/home/.ssh/config
          KNOWN_HOST_URL: dbserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+         HOSTKEY: ${{ secrets.HOSTKEY }}
         run:
          mkdir /github/home/.ssh/;
          touch "$SSH_KEY_PRIVATE_PATH";
          touch "SSH_KEY_PUBLIC_PATH";
          touch "SSH_CONFIG";
+         touch "KNOWN_HOSTS_PATH";
          echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
          echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
+         echo "$HOSTKEY" > "$KNOWN_HOSTS_PATH";
          echo "$KNOWN_HOST_URL" >> $SSH_CONFIG;
          echo "$KEYSCAN" >> $KNOWN_HOSTS_PATH;
          ENV=dev;
