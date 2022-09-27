@@ -21,16 +21,15 @@ jobs:
          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
         
         run: |
-         mkdir -p $SSH_PATH
-         echo "$KNOWN_HOST_URL" >> $SSH_CONFIG
-         touch $KNOWN_HOSTS_PATH
-         ssh-keyscan -f $KNOWN_HOSTS_PATH
-         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
-         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
-         chmod 700 "$SSH_PATH"
-         chmod 644 "$KNOWN_HOSTS_PATH"
-         chmod 600 "$SSH_KEY_PRIVATE_PATH"
-         chmod 644 "$SSH_KEY_PUBLIC_PATH"
+         mkdir -p $SSH_PATH;
+         echo "$KNOWN_HOST_URL" >> $SSH_CONFIG;
+         ssh-keyscan -f $KNOWN_HOSTS_PATH;
+         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
+         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
+         chmod 700 "$SSH_PATH";
+         chmod 644 "$KNOWN_HOSTS_PATH";
+         chmod 600 "$SSH_KEY_PRIVATE_PATH";
+         chmod 644 "$SSH_KEY_PUBLIC_PATH";
          sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
          
          
