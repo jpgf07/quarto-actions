@@ -16,7 +16,14 @@ jobs:
           cd ~/
           pwd
           ls -la
-          cat known_hosts
+          mkdir .ssh
+          ls -la
+          ssh -T appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+          echo after ssh -t
+          ls -la
+          echo .ssh cd to and list
+          cd .ssh
+          ls -la
   #       ssh -T appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
   #       sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
           
