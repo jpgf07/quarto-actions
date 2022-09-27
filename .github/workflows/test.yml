@@ -22,6 +22,7 @@ jobs:
           LOCAL_BRANCH: develop
           SSH_PATH: /github/home/.ssh
           HOST: ${{ secrets.PANTHEONHOST }} 
+          KEYSCAN: ${{ secrets.KEYSCAN }} 
           KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
           KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
           SSH_CONFIG: /github/home/.ssh/config
