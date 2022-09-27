@@ -36,7 +36,7 @@ jobs:
          pwd
          echo LISTO HOME DIRECTORY FILES
          ls -l
-         mkdir -p $SSH_PATH
+         sudo mkdir -p $SSH_PATH
          echo after creation:
          ls -l
       #    mkdir -p $SSH_PATH
