@@ -28,9 +28,7 @@ jobs:
           echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
           echo .ssh cd to and list;
           ls -la /github/home/.ssh
- #         pwd
- #         ls -la
-  #       ssh -T appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+          ssh -T appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
   #       sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
           
           
