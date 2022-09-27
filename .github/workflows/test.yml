@@ -20,7 +20,7 @@ jobs:
           SSH_KEY_PRIVATE: ${{ secrets.PRIVATEPANTHEONKEY }}
           SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
           LOCAL_BRANCH: develop
-          SSH_PATH: /home/runner/.ssh
+          SSH_PATH: /github/home/.ssh
           HOST: ${{ secrets.PANTHEONHOST }} 
           KNOWN_HOSTS_PATH: /home/runner/.ssh/known_hosts
           KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
@@ -35,6 +35,9 @@ jobs:
          echo PRINT HOME DIRECTORY
          pwd
          echo LISTO HOME DIRECTORY FILES
+         ls -l
+         mkdir -p $SSH_PATH
+         echo after creation:
          ls -l
       #    mkdir -p $SSH_PATH
       #    echo starting environment configuration        
