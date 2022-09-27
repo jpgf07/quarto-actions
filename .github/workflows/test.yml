@@ -22,7 +22,7 @@ jobs:
           LOCAL_BRANCH: develop
           SSH_PATH: /github/home/.ssh
           HOST: ${{ secrets.PANTHEONHOST }} 
-          KNOWN_HOSTS_PATH: /home/runner/.ssh/known_hosts
+          KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
           KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
           SSH_CONFIG: /home/runner/.ssh/config
           SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
@@ -39,19 +39,18 @@ jobs:
          mkdir -p $SSH_PATH
          echo after creation:
          ls -la
-      #    mkdir -p $SSH_PATH
-      #    echo starting environment configuration        
-      #    echo "$KNOWN_HOST_URL" >> $SSH_CONFIG
-      #    echo "$KEYSCAN" >> $KNOWN_HOSTS_PATH 
-      #    echo known_host file should be complete now:
-      #    cat $KNOWN_HOSTS_PATH
-      #    echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
-      #    echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
-      #    chmod 700 "$SSH_PATH"
-      #    chmod 644 "$KNOWN_HOSTS_PATH"
-      #    chmod 600 "$SSH_KEY_PRIVATE_PATH"	
-      #    chmod 644 "$SSH_KEY_PUBLIC_PATH"
-      #    cd ~/work/
+         echo starting environment configuration        
+         echo "$HOST" >> $SSH_CONFIG
+         echo "$KEYSCAN" >> $KNOWN_HOSTS_PATH 
+         echo known_host file should be complete now:
+         cat $KNOWN_HOSTS_PATH
+         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
+         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
+         chmod 700 "$SSH_PATH"
+         chmod 644 "$KNOWN_HOSTS_PATH"
+         chmod 600 "$SSH_KEY_PRIVATE_PATH"	
+         chmod 644 "$SSH_KEY_PUBLIC_PATH"
+         ls -la
       #    ls -la
       #    git clone ssh://codeserver.dev.f107fd78-19f6-4e5a-861a-04ee2cd16ea0@codeserver.dev.f107fd78-19f6-4e5a-861a-04ee2cd16ea0.drush.in:2222/~/repository.git rstudiobuild          
       
