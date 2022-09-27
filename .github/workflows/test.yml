@@ -20,7 +20,7 @@ jobs:
       - name: Prepare Environment
         env:
          SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-         SH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
+         SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
          SSH_PATH: /home/root/.ssh
          KNOWN_HOSTS_PATH: /home/root/.ssh/known_hosts
          KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
@@ -30,7 +30,7 @@ jobs:
          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
          HOSTKEY: ${{ secrets.HOSTKEY }}
         run:
-         mkdir -p /home/root/.ssh;
+         mkdir -p $SSH_PATH;
          touch "$SSH_KEY_PRIVATE_PATH";
          touch "SSH_KEY_PUBLIC_PATH";
          touch "SSH_CONFIG";
