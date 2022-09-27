@@ -23,10 +23,9 @@ jobs:
          SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
         run:
           mkdir /github/home/.ssh; 
-          ls -la /github/home/.ssh
-
- #         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
- #         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
+          ls -la /github/home/.ssh;
+          echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
+          echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
  #         echo .ssh cd to and list
  #         cd .ssh
  #         pwd
