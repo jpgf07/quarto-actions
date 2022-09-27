@@ -49,8 +49,8 @@ jobs:
          echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
          chmod 700 "$SSH_PATH"
          chmod 644 "$KNOWN_HOSTS_PATH"
-         chmod 600 "$SSH_KEY_PRIVATE_PATH"	
-         chmod 644 "$SSH_KEY_PUBLIC_PATH"
+         chmod 400 "$SSH_KEY_PRIVATE_PATH"	
+         chmod 400 "$SSH_KEY_PUBLIC_PATH"
          cd /github/home/.ssh
          echo list .ssh directory
          ls -la
