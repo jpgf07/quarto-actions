@@ -14,9 +14,10 @@ jobs:
           echo STARTING WITH THE PROJECT
           ssh -T appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
           cd ~/.ssh
+          pwd
           ls -la
           cat known_hosts
-          sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+  #       sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
           
           
 
