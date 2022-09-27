@@ -12,88 +12,22 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           echo STARTING WITH THE PROJECT
+          
 
 
-      - name: Prepare Environment
-        env:
-          ENVIRONMENT_NAME: jptest1dev
-          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEPANTHEONKEY }}
-          SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-          LOCAL_BRANCH: develop
-          SSH_PATH: /github/home/.ssh
-          HOST: ${{ secrets.PANTHEONHOST }} 
-          KEYSCAN: ${{ secrets.KEYSCAN }} 
-          KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
-          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
-          SSH_CONFIG: /github/home/.ssh/config
-          SSH_KEY_PRIVATE_PATH: /github/home/.ssh/id_rsa
-          SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
-          ENV: development
-          LOCAL_BRANCH_DEFAULT: develop
-          BRANCH: develop
+      - name: Installing PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: '8.1'
+      - name: Installing Terminus
+        uses: kopepasah/setup-pantheon-terminus@master
+        with:
+          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+      - name: Listing Sites
+        if: success()
         run: |
-         cd ~
-         echo PRINT HOME DIRECTORY
-         pwd
-         echo LISTO HOME DIRECTORY FILES
-         ls -l
-         mkdir -p $SSH_PATH
-         echo after creation:
-         ls -la
-         echo starting environment configuration        
-         echo "$HOST" >> $SSH_CONFIG
-         echo "$KEYSCAN" >> $KNOWN_HOSTS_PATH 
-         echo known_host file should be complete now:
-         cat $KNOWN_HOSTS_PATH
-         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
-         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
-         chmod 700 "$SSH_PATH"
-         chmod 644 "$KNOWN_HOSTS_PATH"
-         chmod 400 "$SSH_KEY_PRIVATE_PATH"	
-         chmod 600 "$SSH_KEY_PUBLIC_PATH"
-         cd /github/home/.ssh
-         echo list .ssh directory
-         ls -la
-         echo known hosts file
-         cat known_hosts
-         echo adding key to SSH
-         ssh-agent bash -c 'ssh-add /github/home/.ssh/id_rsa.pub'
-         echo performing git clone to test ssh
-         git clone ssh://codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528@codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in:2222/~/repository.git -b master jptest1
-         
+          terminus site:list
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  #    - name: Installing PHP
-  #      uses: shivammathur/setup-php@master
-  #      with:
-  #        php-version: '8.1'
-  #    - name: Installing Terminus
-  #      uses: kopepasah/setup-pantheon-terminus@master
-  #      with:
-  #        pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
-  #    - name: Listing Sites
-  #      if: success()
-  #      run: |
-  #        terminus site:list
-  #        terminus import:files jptest1.dev /files --yes
 
 
 
