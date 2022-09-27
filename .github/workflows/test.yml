@@ -50,6 +50,8 @@ jobs:
          chmod 644 "$KNOWN_HOSTS_PATH"
          chmod 600 "$SSH_KEY_PRIVATE_PATH"	
          chmod 644 "$SSH_KEY_PUBLIC_PATH"
+         cd /github/home/.ssh
+         echo .ssh s
          ls -la
       #    ls -la
       #    git clone ssh://codeserver.dev.f107fd78-19f6-4e5a-861a-04ee2cd16ea0@codeserver.dev.f107fd78-19f6-4e5a-861a-04ee2cd16ea0.drush.in:2222/~/repository.git rstudiobuild          
