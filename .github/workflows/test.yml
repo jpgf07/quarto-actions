@@ -13,6 +13,7 @@ jobs:
       - run: |
           echo STARTING WITH THE PROJECT
           cd /
+          cd root
           ls -la
  
  
