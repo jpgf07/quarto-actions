@@ -29,7 +29,7 @@ jobs:
          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
         
         run:
-         mkdir -p $SSH_PATH
+         mkdir -p $SSH_PATH;
          echo "$KNOWN_HOST_URL" >> $SSH_CONFIG
          touch $KNOWN_HOSTS_PATH
          ssh-keyscan -f $KNOWN_HOSTS_PATH
