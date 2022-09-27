@@ -36,9 +36,9 @@ jobs:
          pwd
          echo LISTO HOME DIRECTORY FILES
          ls -l
-         sudo mkdir -p $SSH_PATH
+         mkdir -p $SSH_PATH
          echo after creation:
-         ls -l
+         ls -la
       #    mkdir -p $SSH_PATH
       #    echo starting environment configuration        
       #    echo "$KNOWN_HOST_URL" >> $SSH_CONFIG
