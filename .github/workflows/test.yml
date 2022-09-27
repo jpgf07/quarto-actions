@@ -31,6 +31,7 @@ jobs:
          echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
          echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
          echo "$KNOWN_HOST_URL" >> $SSH_CONFIG;
+         echo "$KEYSCAN" >> $KNOWN_HOSTS_PATH;
          ENV=dev;
          export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528;
          sftp -i /github/home/.ssh/id_rsa.pub -oPort=2222 $ENV.$SITE@appserver.$ENV.$SITE.drush.in
