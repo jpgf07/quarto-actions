@@ -21,12 +21,16 @@ jobs:
          KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
          SSH_KEY_PRIVATE_PATH: /github/home/.ssh/id_rsa
          SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
+         SSH_CONFIG: /github/home/.ssh/config
+         KNOWN_HOST_URL: dbserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
         run:
          mkdir /github/home/.ssh/;
          touch "$SSH_KEY_PRIVATE_PATH";
          touch "SSH_KEY_PUBLIC_PATH";
+         touch "SSH_CONFIG";
          echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
          echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
+         echo "$KNOWN_HOST_URL" >> $SSH_CONFIG
          ENV=dev;
          export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528;
          sftp -i /github/home/.ssh/id_rsa.pub -oPort=2222 $ENV.$SITE@appserver.$ENV.$SITE.drush.in
