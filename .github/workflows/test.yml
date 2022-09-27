@@ -29,7 +29,7 @@ jobs:
          KNOWN_HOST_URL: dbserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
          HOSTKEY: ${{ secrets.HOSTKEY }}
         run:
-         mkdir /home/root/.ssh/;
+         mkdir /home/root/.ssh;
          touch "$SSH_KEY_PRIVATE_PATH";
          touch "SSH_KEY_PUBLIC_PATH";
          touch "SSH_CONFIG";
