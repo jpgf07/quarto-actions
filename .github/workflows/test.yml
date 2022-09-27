@@ -51,9 +51,12 @@ jobs:
          chmod 600 "$SSH_KEY_PRIVATE_PATH"	
          chmod 644 "$SSH_KEY_PUBLIC_PATH"
          cd /github/home/.ssh
-         echo .ssh s
+         echo list .ssh directory
          ls -la
-         git clone ssh://codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528@codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in:2222/~/repository.git -b master jptest1
+         echo known hosts file
+         cat known_hosts
+       
+       # git clone ssh://codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528@codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in:2222/~/repository.git -b master jptest1
          
 
 
