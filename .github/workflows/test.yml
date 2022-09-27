@@ -56,7 +56,10 @@ jobs:
          ls -la
          echo known hosts file
          cat known_hosts
-         ssh-agent bash -c 'ssh-add /github/home/.ssh/id_rsa; git clone ssh://codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528@codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in:2222/~/repository.git -b master jptest1
+         echo adding key to SSH
+         ssh-agent bash -c 'ssh-add /github/home/.ssh/id_rsa'
+         echo performing git clone
+         git clone ssh://codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528@codeserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in:2222/~/repository.git -b master jptest1
          
 
 
