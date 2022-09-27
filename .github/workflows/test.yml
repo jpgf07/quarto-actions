@@ -30,6 +30,7 @@ jobs:
         run:
          mkdir -p $SSH_PATH;
          echo "$KNOWN_HOST_URL" >> $SSH_CONFIG;
+         touch $KNOWN_HOSTS_PATH
          ssh-keyscan -f $KNOWN_HOSTS_PATH
          cat $KNOWN_HOSTS_PATH
          echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
