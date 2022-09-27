@@ -12,21 +12,23 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           echo STARTING WITH THE PROJECT
+          sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+          
           
 
 
-      - name: Installing PHP
-        uses: shivammathur/setup-php@master
-        with:
-          php-version: '8.1'
-      - name: Installing Terminus
-        uses: kopepasah/setup-pantheon-terminus@master
-        with:
-          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
-      - name: Listing Sites
-        if: success()
-        run: |
-          terminus site:list
+ #     - name: Installing PHP
+ #       uses: shivammathur/setup-php@master
+ #       with:
+ #         php-version: '8.1'
+ #     - name: Installing Terminus
+ #       uses: kopepasah/setup-pantheon-terminus@master
+ #       with:
+ #         pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+ #     - name: Listing Sites
+ #       if: success()
+ #       run: |
+ #         terminus site:list
 
 
 
