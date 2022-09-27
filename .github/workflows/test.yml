@@ -24,9 +24,9 @@ jobs:
           HOST: ${{ secrets.PANTHEONHOST }} 
           KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
           KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
-          SSH_CONFIG: /home/runner/.ssh/config
-          SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
-          SSH_KEY_PUBLIC_PATH: /home/runner/.ssh/id_rsa.pub
+          SSH_CONFIG: /github/home/.ssh/config
+          SSH_KEY_PRIVATE_PATH: /github/home/.ssh/id_rsa
+          SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
           ENV: development
           LOCAL_BRANCH_DEFAULT: develop
           BRANCH: develop
