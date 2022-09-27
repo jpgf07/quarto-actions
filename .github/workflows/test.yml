@@ -13,7 +13,7 @@ jobs:
       - run: |
           echo STARTING WITH THE PROJECT
  
-          cd ~/.ssh
+          cd ~/
           pwd
           ls -la
           cat known_hosts
