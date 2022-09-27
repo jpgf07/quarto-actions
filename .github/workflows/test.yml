@@ -14,44 +14,85 @@ jobs:
           echo STARTING WITH THE PROJECT
 
 
-      - name: Installing PHP
-        uses: shivammathur/setup-php@master
-        with:
-          php-version: '8.1'
-      - name: Installing Terminus
-        uses: kopepasah/setup-pantheon-terminus@master
-        with:
-          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
-      - name: Listing Sites
-        if: success()
+      - name: Prepare Environment
+        env:
+          ENVIRONMENT_NAME: jptest1dev
+          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEPANTHEONKEY }}
+          SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
+          LOCAL_BRANCH: develop
+          SSH_PATH: /home/runner/.ssh
+          HOST: ${{ secrets.PANTHEONHOST }} 
+          KNOWN_HOSTS_PATH: /home/runner/.ssh/known_hosts
+          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
+          SSH_CONFIG: /home/runner/.ssh/config
+          SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
+          SSH_KEY_PUBLIC_PATH: /home/runner/.ssh/id_rsa.pub
+          ENV: development
+          LOCAL_BRANCH_DEFAULT: develop
+          BRANCH: develop
         run: |
-          terminus site:list
-          terminus self:plugin:install terminus-rsync-plugin
-          terminus import:files jptest1.dev /files --yes
-
-
-
-
-
-
-
+         cd ~
+         echo PRINT HOME DIRECTORY
+         pwd
+         echo LISTO HOME DIRECTORY FILES
+         ls -l
+      #    mkdir -p $SSH_PATH
+      #    echo starting environment configuration        
+      #    echo "$KNOWN_HOST_URL" >> $SSH_CONFIG
+      #    echo "$KEYSCAN" >> $KNOWN_HOSTS_PATH 
+      #    echo known_host file should be complete now:
+      #    cat $KNOWN_HOSTS_PATH
+      #    echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
+      #    echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
+      #    chmod 700 "$SSH_PATH"
+      #    chmod 644 "$KNOWN_HOSTS_PATH"
+      #    chmod 600 "$SSH_KEY_PRIVATE_PATH"	
+      #    chmod 644 "$SSH_KEY_PUBLIC_PATH"
+      #    cd ~/work/
+      #    ls -la
+      #    git clone ssh://codeserver.dev.f107fd78-19f6-4e5a-861a-04ee2cd16ea0@codeserver.dev.f107fd78-19f6-4e5a-861a-04ee2cd16ea0.drush.in:2222/~/repository.git rstudiobuild          
       
-      
-      #   terminus site:list
-      #   terminus self:plugin:install terminus-rsync-plugin
-      #   terminus help remote:rsync
-      #   terminus rsync /__w/quarto-actions/quarto-actions/ jptest1.dev:files
-         
 
-      
-      
-      
-      
 
-      
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #    - name: Installing PHP
+  #      uses: shivammathur/setup-php@master
+  #      with:
+  #        php-version: '8.1'
+  #    - name: Installing Terminus
+  #      uses: kopepasah/setup-pantheon-terminus@master
+  #      with:
+  #        pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+  #    - name: Listing Sites
+  #      if: success()
+  #      run: |
+  #        terminus site:list
+  #        terminus import:files jptest1.dev /files --yes
+
+
+
     
       #### STARTING WITH THE PROJECT FULL RUN
       #    sudo apt-get update
@@ -66,31 +107,5 @@ jobs:
    
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-  # PREVIOUS WORKING BUILD 
-  #        sudo apt-get update
-  #        sudo apt-get install tree
-  #        echo STARTING WITH THE PROJECT
-  #        cd /__w/quarto-actions/quarto-actions/
-  #        sudo mkdir proyectito; cd proyectito; quarto create-project myproject; cd myproject; rm _quarto.yml
-  #        mv /__w/quarto-actions/quarto-actions/_quarto.yml  /__w/quarto-actions/quarto-actions/proyectito/myproject
-  #        mv /__w/quarto-actions/quarto-actions/markdown /__w/quarto-actions/quarto-actions/proyectito/myproject/markdown  
-  #        echo RENDERING WITH QUARTO
-  #        quarto render --to html 
-  #        tree public/markdown/
-  # UP TO HERE - CROSSREF WARININGS
    
  
