@@ -8,15 +8,7 @@ jobs:
   quarto-linux:
     runs-on: ubuntu-latest
     container: jpgomezz/quarto:final
-    steps:            
-      - uses: actions/checkout@v2
-      - run: |
-          echo STARTING WITH THE PROJECT
-          cd /
-          cd root
-          ls -la
- 
- 
+    steps:             
       - name: Prepare Environment
         env:
          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
@@ -30,21 +22,29 @@ jobs:
         
         run:
          mkdir -p $SSH_PATH;
-         echo "$KNOWN_HOST_URL" >> $SSH_CONFIG
-         touch $KNOWN_HOSTS_PATH
-         ssh-keyscan -f $KNOWN_HOSTS_PATH
-         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
-         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
-         chmod 700 "$SSH_PATH"
-         chmod 644 "$KNOWN_HOSTS_PATH"
-         chmod 600 "$SSH_KEY_PRIVATE_PATH"
-         chmod 644 "$SSH_KEY_PUBLIC_PATH"
+         echo "$KNOWN_HOST_URL" >> $SSH_CONFIG;
+         touch $KNOWN_HOSTS_PATH;
+         ssh-keyscan -f $KNOWN_HOSTS_PATH;
+         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
+         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
+         chmod 700 "$SSH_PATH";
+         chmod 644 "$KNOWN_HOSTS_PATH";
+         chmod 600 "$SSH_KEY_PRIVATE_PATH";
+         chmod 644 "$SSH_KEY_PUBLIC_PATH";
          sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
          
          
        # ENV=dev;
        # export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528;
 
+
+# ORIGIGI
+#      - uses: actions/checkout@v2
+#      - run: |
+#          echo STARTING WITH THE PROJECT
+#          cd /
+#          cd root
+#          ls -la
 
  #     - name: Installing PHP
  #       uses: shivammathur/setup-php@master
@@ -59,16 +59,6 @@ jobs:
  #       run: |
  #         terminus site:list
 
-
-
-  #    - name: Prepare Environment
-  #      env:
-  #       SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-  #       SH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
-  #       SSH_PATH: /github/home/.ssh
-  #       KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
-  #       SSH_KEY_PRIVATE_PATH: /github/home/.ssh/id_rsa
-  #       SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
 
 
     
