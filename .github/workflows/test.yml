@@ -31,7 +31,8 @@ jobs:
           touch /github/home/.ssh/known_hosts;
           echo CAT KNOWN_HOSTS;
           cat /github/home/.ssh/known_hosts;
-          ssh -T appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+          ssh -o "IdentitiesOnly=yes" -i "$SSH_KEY_PUBLIC_PATH" appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+ #       ssh -T appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
   #       sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
           
           
