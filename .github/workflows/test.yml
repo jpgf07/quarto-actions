@@ -19,30 +19,25 @@ jobs:
  
       - name: Prepare Environment
         env:
-         SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
+         SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
          SSH_PATH: /home/root/.ssh
          KNOWN_HOSTS_PATH: /home/root/.ssh/known_hosts
-         KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
          SSH_KEY_PRIVATE_PATH: /home/root/.ssh/id_rsa
          SSH_KEY_PUBLIC_PATH: /home/root/.ssh/id_rsa.pub
          SSH_CONFIG: /home/root/.ssh/config
          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
-         HOSTKEY: ${{ secrets.HOSTKEY }}
         run:
          mkdir -p $SSH_PATH;
-         touch "$SSH_KEY_PRIVATE_PATH";
-         touch "SSH_KEY_PUBLIC_PATH";
-         touch "SSH_CONFIG";
-         touch "KNOWN_HOSTS_PATH";
          echo "$KNOWN_HOST_URL" >> $SSH_CONFIG;
-         echo "$KEYSCAN" >> $KNOWN_HOSTS_PATH;
-         echo "$SSH_KEY_PRIVATE" >> $SSH_KEY_PRIVATE_PATH;
-         echo "$SSH_KEY_PUBLIC" >> $SSH_KEY_PUBLIC_PATH;
-         chmod 700 "$SSH_PATH";
-         chmod 644 "$KNOWN_HOSTS_PATH";
-         chmod 600 "$SSH_KEY_PRIVATE_PATH";
-         chmod 644 "$SSH_KEY_PUBLIC_PATH";
+         ssh-keyscan -f $KNOWN_HOSTS_PATH
+         cat $KNOWN_HOSTS_PATH
+         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
+         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
+         chmod 700 "$SSH_PATH"
+         chmod 644 "$KNOWN_HOSTS_PATH"
+         chmod 600 "$SSH_KEY_PRIVATE_PATH"	
+         chmod 644 "$SSH_KEY_PUBLIC_PATH"
          sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
          
          
