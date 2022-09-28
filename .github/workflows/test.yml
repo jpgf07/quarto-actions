@@ -18,10 +18,10 @@ jobs:
         echo STARTING PROJECT
      
   job2-name:
+    name: transfering-files
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Prepare Environment
         env:
           SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
           SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
@@ -33,7 +33,7 @@ jobs:
           SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
           KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-        run: | 
+      - run: | 
           echo Making SSH Directories
           mkdir -p $SSH_PATH
           touch $SSH_CONFIG_PATH
