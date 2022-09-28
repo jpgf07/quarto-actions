@@ -35,9 +35,12 @@ jobs:
           cd /home/runner/
           ls -la      
           touch ${{ secrets.SSH_CONFIG_PATH }}
-          echo ${{ secrets.SSH_CONFIG }} >> ${{ secrets.SSH_CONFIG_PATH }}
-          cd /home/runner/.ssh
+          echo after config file creation
+          cd /home/runner/.ssh/
           ls -la
+    #      echo ${{ secrets.SSH_CONFIG }} >> ${{ secrets.SSH_CONFIG_PATH }}
+    #      cd /home/runner/.ssh
+    #      ls -la
     
     
     #      echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
