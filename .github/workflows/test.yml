@@ -7,14 +7,13 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    services:
-     service-rendering:
+    container:
        image: jpgomezz/quarto:final
                
     steps:             
-    - uses: actions/checkout@v2
-    - name: Render files
-    - run: |
+     - uses: actions/checkout@v2
+     - name: Render files
+     - run: |
         echo STARTING PROJECT
      
   job2-name:
@@ -22,6 +21,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        env:
+          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
+          SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
+          SSH_PATH: /github/home/.ssh
+          KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
+          SSH_KEY_PRIVATE_PATH: /github/home/.ssh/id_rsa
+          SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
+          SSH_CONFIG_PATH: /github/home/.ssh/config
+          SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
+          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
+          KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
           echo Making SSH Directories
           mkdir -p $SSH_PATH
