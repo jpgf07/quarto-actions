@@ -34,8 +34,8 @@ jobs:
          ls -la
          touch $SSH_CONFIG_PATH
          echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
-         echo again
-         cd .ssh
+         echo again cd to ssh
+         cd /github/home/.ssh/
          ls -la
   #       touch $SSH_CONFIG
   #       echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
