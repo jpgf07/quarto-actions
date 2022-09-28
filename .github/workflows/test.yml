@@ -25,8 +25,13 @@ jobs:
          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
          KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       run: |
-         sftp -o StrictHostKeyChecking=no appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in;
-         sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+         echo PRINT CD ~
+         cd ~
+         pwd
+         ls -la
+         
+      # sftp -o StrictHostKeyChecking=no appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in;
+      # sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
 
    #      mkdir -p $SSH_PATH;
    #      touch $KNOWN_HOSTS_PATH;
