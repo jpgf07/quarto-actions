@@ -44,6 +44,29 @@ jobs:
           echo CHECKING ARTIFACT
           cat /home/runner/work/quarto-actions/quarto-actions/path/to/artifact/world.txt
      
+      - run: |
+          mkdir -p ${{ secrets.SSH_PATH }}
+          touch /home/runner/.ssh/known_hosts
+          touch ${{ secrets.SSH_CONFIG_PATH }}
+          echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
+          echo "${{ secrets.PRIVATEKEY }}" > "/home/runner/.ssh/id_rsa"    
+          echo "${{ secrets.PUBLICKEY }}" > "/home/runner/.ssh/id_rsa.pub"      
+          echo "${{ secrets.KNOWN_HOSTS }}" > "/home/runner/.ssh/known_hosts"
+          chmod 700 "/home/runner/.ssh/"
+          chmod 644 "/home/runner/.ssh/known_hosts"
+          chmod 600 "/home/runner/.ssh/id_rsa"
+          chmod 644 "/home/runner/.ssh/id_rsa.pub"
+          chmod 600 "/home/runner/.ssh/config"
+          echo SSH DIRECTORIES STATUS CHECK
+          cd /home/runner/.ssh/
+          pwd
+          ls -la
+          sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+     
+     
+     
+     
+     
      
      
      
