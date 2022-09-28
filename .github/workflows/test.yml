@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     container: jpgomezz/quarto:final
     steps:             
+    - uses: actions/checkout@v2
+    - run: |
+        echo STARTING PROJECT
          
     - name: Prepare Environment
       env:
