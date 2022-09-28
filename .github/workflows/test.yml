@@ -39,7 +39,7 @@ jobs:
           echo "${{ secrets.PUBLICKEY }}" > "/home/runner/.ssh/id_rsa.pub"      
           echo "${{ secrets.KNOWN_HOSTS }}" > "/home/runner/.ssh/known_hosts"
           chmod 700 "/home/runner/.ssh/"
-          chmod 644 "/home/runner/known_hosts"
+          chmod 644 "/home/runner/.ssh/known_hosts"
           chmod 600 "/home/runner/.ssh/id_rsa"
           chmod 644 "/home/runner/.ssh/id_rsa.pub"
           chmod 600 "/home/runner/.ssh/config"
