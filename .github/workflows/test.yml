@@ -8,7 +8,8 @@ jobs:
   quarto-linux:
     runs-on: ubuntu-latest
     container: jpgomezz/quarto:final            
-    steps:             
+    steps:
+     - uses: actions/checkout@v1
      - uses: actions/checkout@v2
        name: Render files
      - run: |
@@ -17,7 +18,7 @@ jobs:
         pwd
         ls -la
   
-     - uses: actions/checkout@v1
+     
      - run: mkdir -p path/to/artifact
      - run: echo hello > path/to/artifact/world.txt
 
