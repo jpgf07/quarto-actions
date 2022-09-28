@@ -35,7 +35,7 @@ jobs:
           touch test.txt
           echo "$SSH_PATH" >> test.txt;
           ls -la
-          cat text.txt
+          cat test.txt
     #      touch $SSH_CONFIG_PATH;
     #      echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH";
     #      echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
