@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        name: testname
         env:
           SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
           SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
