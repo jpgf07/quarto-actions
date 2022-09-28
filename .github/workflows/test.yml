@@ -12,6 +12,7 @@ jobs:
      - uses: actions/checkout@v2
        name: Render files
      - run: |
+        echo DIRECTORIES CONTAINER
         cd /quatro
         pwd
         ls -la
@@ -32,7 +33,7 @@ jobs:
           KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
-          echo PRINT ROOT DIRECTORIES
+          echo PRINT ROOT DIRECTORIES RUNNER
           cd /
           ls -la
      
