@@ -10,7 +10,7 @@ jobs:
     container: jpgomezz/quarto:final            
     steps:             
      - uses: actions/checkout@v2
-     - name: Render files
+       name: Render files
      - run: |
         echo STARTING PROJECT
      
