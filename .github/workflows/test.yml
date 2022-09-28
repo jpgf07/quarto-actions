@@ -22,16 +22,6 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
-        env:
-          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
-          SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-          KNOWN_HOSTS_PATH: /home/runner/known_hosts
-          SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
-          SSH_KEY_PUBLIC_PATH: /home/runner/.ssh/id_rsa.pub
-          SSH_CONFIG_PATH: /home/runner/.ssh/config
-          SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
-          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
-          KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
           echo PRINT ROOT DIRECTORIES RUNNER
           cd /
