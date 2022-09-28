@@ -26,7 +26,7 @@ jobs:
          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
          KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       run: |
-         sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+         whoami
          
          
          
@@ -47,7 +47,7 @@ jobs:
    #      cd /github/home/.ssh/
    #      pwd
    #      ls -la
-         
+  # sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
          
          
  # sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
