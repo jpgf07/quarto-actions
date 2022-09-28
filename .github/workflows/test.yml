@@ -16,11 +16,11 @@ jobs:
       env:
          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
          SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-         SSH_PATH: ~/.ssh
-         KNOWN_HOSTS_PATH: ~/.ssh/known_hosts
-         SSH_KEY_PRIVATE_PATH: ~/.ssh/id_rsa
-         SSH_KEY_PUBLIC_PATH: ~/.ssh/id_rsa.pub
-         SSH_CONFIG_PATH: ~/.ssh/config
+         SSH_PATH: /.ssh
+         KNOWN_HOSTS_PATH: /.ssh/known_hosts
+         SSH_KEY_PRIVATE_PATH: /.ssh/id_rsa
+         SSH_KEY_PUBLIC_PATH: /.ssh/id_rsa.pub
+         SSH_CONFIG_PATH: /.ssh/config
          SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
          KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
          KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
