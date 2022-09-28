@@ -30,7 +30,8 @@ jobs:
           KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
-          echo Making listing files
+          echo Making listing home files
+          cd ~
           pwd
           ls -la
           echo DONE
