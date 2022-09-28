@@ -15,6 +15,10 @@ jobs:
         echo DIRECTORIES CONTAINER
         cd /
         ls -la
+        echo changing directories looking for repo files
+        cd __w
+        pwd
+        ls -la
      
   job2-name:
     runs-on: ubuntu-latest
