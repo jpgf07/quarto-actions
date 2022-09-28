@@ -30,8 +30,9 @@ jobs:
           KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
-          echo Making SSH Directories
-          mkdir -p /github/home/.ssh
+          echo Making listing files
+          pwd
+          ls -la
           echo DONE
      #     mkdir -p $SSH_PATH;
      #     touch $SSH_CONFIG_PATH;
