@@ -14,6 +14,8 @@ jobs:
     - run: |
         echo WHO AM I
         whoami
+        echo TRYING TO CONNECT
+        sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
 
 
 
