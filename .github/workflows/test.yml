@@ -34,6 +34,9 @@ jobs:
           cd ~
           pwd
           ls -la
+          echo creating a test directory
+          mkdir -p /home/runner/.ssh/
+          ls -la
           echo DONE
      #     mkdir -p $SSH_PATH;
      #     touch $SSH_CONFIG_PATH;
