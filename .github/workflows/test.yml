@@ -12,7 +12,9 @@ jobs:
      - uses: actions/checkout@v2
        name: Render files
      - run: |
-        echo STARTING PROJECT
+        cd /
+        pwd
+        ls -la
      
   job2-name:
     runs-on: ubuntu-latest
