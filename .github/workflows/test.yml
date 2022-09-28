@@ -18,6 +18,8 @@ jobs:
      
   job2-name:
     runs-on: ubuntu-latest
+    container:
+       image: jpgomezz/quarto:final
     steps:
       - uses: actions/checkout@v2
         env:
