@@ -31,13 +31,8 @@ jobs:
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
           echo Making listing home files
-          mkdir -p ${{ secrets.SSH_PATH }}
-          cd /home/runner/
-          ls -la      
+          mkdir -p ${{ secrets.SSH_PATH }}  
           touch ${{ secrets.SSH_CONFIG_PATH }}
-          echo after config file creation
-          cd /home/runner/.ssh/
-          ls -la
           echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
           ls -la
           cat /home/runner/.ssh/config
