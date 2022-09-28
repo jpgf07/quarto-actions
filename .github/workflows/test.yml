@@ -33,7 +33,6 @@ jobs:
          mkdir -p $SSH_PATH
          ls -la
          touch $SSH_CONFIG_PATH
-         echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
          echo again cd to ssh
          cd /github/home/.ssh/
          ls -la
