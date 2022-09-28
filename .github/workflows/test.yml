@@ -12,7 +12,7 @@ jobs:
      - uses: actions/checkout@v2
        name: Render files
      - run: |
-        cd /
+        cd /quatro
         pwd
         ls -la
      
