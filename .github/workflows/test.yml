@@ -42,7 +42,7 @@ jobs:
           cd /
           ls -la
           echo CHECKING ARTIFACT
-          cat path/to/artifact/world.txt
+          cat /home/runner/work/quarto-actions/quarto-actions/path/to/artifact/world.txt
      
      
      
