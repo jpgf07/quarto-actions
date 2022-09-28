@@ -7,8 +7,7 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    container:
-       image: jpgomezz/quarto:final            
+    container: jpgomezz/quarto:final            
     steps:             
      - uses: actions/checkout@v2
      - name: Render files
