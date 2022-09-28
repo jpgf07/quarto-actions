@@ -32,12 +32,12 @@ jobs:
       - run: | 
           echo Making listing home files
           mkdir -p ${{ secrets.SSH_PATH }}
-          touch /home/runner/known_hosts
+          touch /home/runner/.ssh/known_hosts
           touch ${{ secrets.SSH_CONFIG_PATH }}
           echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
           echo "${{ secrets.PRIVATEKEY }}" > "/home/runner/.ssh/id_rsa"    
           echo "${{ secrets.PUBLICKEY }}" > "/home/runner/.ssh/id_rsa.pub"      
-          echo "${{ secrets.KNOWN_HOSTS }}" > "/home/runner/known_hosts"
+          echo "${{ secrets.KNOWN_HOSTS }}" > "/home/runner/.ssh/known_hosts"
           chmod 700 "/home/runner/.ssh/"
           chmod 644 "/home/runner/known_hosts"
           chmod 600 "/home/runner/.ssh/id_rsa"
