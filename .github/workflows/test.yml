@@ -27,6 +27,14 @@ jobs:
          KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       run: |
          whoami
+         echo list root directories
+         cd /
+         pwd
+         ls -la
+         
+         
+         
+         
          
          
          
