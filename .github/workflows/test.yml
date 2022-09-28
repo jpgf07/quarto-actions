@@ -17,6 +17,9 @@ jobs:
         echo show root directories
         pwd
         ls -la
+        echo /root/github content
+        cd /github
+        ls -la
 
 #    - name: Prepare Environment
 #      env:
