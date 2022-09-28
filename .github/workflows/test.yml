@@ -17,7 +17,6 @@ jobs:
         pwd
         ls -la
   
-     
      - run: mkdir -p path/to/artifact
      - run: echo hello > path/to/artifact/world.txt
 
@@ -32,13 +31,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repository content
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
+      - uses: actions/download-artifact@master
+        with:
+         name: my-artifact
+         path: path/to/artifact
+     
       - run: | 
           echo PRINT ROOT DIRECTORIES RUNNER
           cd /
           ls -la
-
-     
+          echo CHECKING ARTIFACT
+          cat path/to/artifact/world.txt
      
      
      
