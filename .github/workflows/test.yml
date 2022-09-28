@@ -32,8 +32,8 @@ jobs:
          ls -la
          mkdir -p $SSH_PATH
          ls -la
-         touch $SSH_CONFIG_PATH
-         echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
+         sudo touch $SSH_CONFIG_PATH
+         sudo echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
          echo again
          ls -la
   #       touch $SSH_CONFIG
