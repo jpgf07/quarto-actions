@@ -31,7 +31,8 @@ jobs:
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
           echo Making listing home files
-          mkdir -p ${{ secrets.SSH_PATH }}  
+          mkdir -p ${{ secrets.SSH_PATH }}
+          touch /home/runner/known_hosts
           touch ${{ secrets.SSH_CONFIG_PATH }}
           echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
           echo "${{ secrets.PRIVATEKEY }}" > "/home/runner/.ssh/id_rsa"    
