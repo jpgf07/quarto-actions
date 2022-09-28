@@ -13,21 +13,13 @@ jobs:
        name: Render files
      - run: |
         echo DIRECTORIES CONTAINER
-        cd /
-        ls -la
-        echo changing directories looking for repo files
-        cd __w
-        pwd
-        ls -la
-        cd quarto-actions
-        pwd
-        cd quarto-actions
+        cd /__w/quarto-actions/quarto-actions
         pwd
         ls -la
 
 
-
-  job2-name:
+  sftp-transfer:
+    needs: quarto-linux
     runs-on: ubuntu-latest
     steps:
       - name: checkout repository content
@@ -36,15 +28,7 @@ jobs:
           echo PRINT ROOT DIRECTORIES RUNNER
           cd /
           ls -la
-          cd home
-          pwd
-          ls -la
-          cd runner
-          pwd
-          ls -la
-          cd runners
-          pwd
-          ls -la
+
      
      
      
