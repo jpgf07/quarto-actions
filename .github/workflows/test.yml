@@ -33,6 +33,8 @@ jobs:
          mkdir -p $SSH_PATH
          ls -la
          touch $SSH_CONFIG_PATH
+         echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
+         echo again
          ls -la
   #       touch $SSH_CONFIG
   #       echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
