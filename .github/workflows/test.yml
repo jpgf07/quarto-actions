@@ -24,6 +24,9 @@ jobs:
         cd quarto-actions
         pwd
         ls -la
+        cd runners
+        pwd
+        ls -la
      
   job2-name:
     runs-on: ubuntu-latest
