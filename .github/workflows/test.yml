@@ -38,6 +38,8 @@ jobs:
           echo after config file creation
           cd /home/runner/.ssh/
           ls -la
+          echo "This is a test" >> ${{ secrets.SSH_CONFIG_PATH }}
+          ls -la
     #      echo ${{ secrets.SSH_CONFIG }} >> ${{ secrets.SSH_CONFIG_PATH }}
     #      cd /home/runner/.ssh
     #      ls -la
