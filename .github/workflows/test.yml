@@ -19,6 +19,11 @@ jobs:
         cd __w
         pwd
         ls -la
+        cd quarto-actions
+        pwd
+        cd quarto-actions
+        pwd
+        ls -la
      
   job2-name:
     runs-on: ubuntu-latest
