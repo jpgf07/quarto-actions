@@ -43,7 +43,7 @@ jobs:
           chmod 644 "/home/runner/.ssh/id_rsa.pub"
           chmod 600 "/home/runner/.ssh/config"
           echo SSH DIRECTORIES STATUS CHECK
-          cd /github/home/.ssh/
+          cd /home/runner/.ssh/
           pwd
           ls -la
          
