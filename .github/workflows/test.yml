@@ -20,7 +20,6 @@ jobs:
   job2-name:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Prepare Environment
       env:
          SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
