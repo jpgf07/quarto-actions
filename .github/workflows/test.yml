@@ -32,7 +32,7 @@ jobs:
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
           echo Making listing home files
-          mkdir -p $SSH_PATH
+          echo $SSH_PATH
           ls -la
     #      touch $SSH_CONFIG_PATH;
     #      echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH";
