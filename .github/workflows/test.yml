@@ -22,7 +22,6 @@ jobs:
         env:
           SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
           SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-          SSH_PATH: /home/runner/.ssh
           KNOWN_HOSTS_PATH: /home/runner/known_hosts
           SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
           SSH_KEY_PUBLIC_PATH: /home/runner/.ssh/id_rsa.pub
