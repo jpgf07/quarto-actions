@@ -32,7 +32,8 @@ jobs:
          ls -la
          mkdir -p $SSH_PATH
          ls -la
-  #       touch $KNOWN_HOSTS_PATH
+         touch $KNOWN_HOSTS_PATH
+         ls -la
   #       touch $SSH_CONFIG
   #       echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
   #       echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
