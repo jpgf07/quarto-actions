@@ -7,6 +7,7 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
+    container: jpgomezz/quarto:final
     steps:             
     - uses: actions/checkout@v2
     - run: |
@@ -29,75 +30,69 @@ jobs:
          cd ~
          pwd
          ls -la
-         mkdir -p $SSH_PATH
-         touch $KNOWN_HOSTS_PATH
-         touch $SSH_CONFIG
-         echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
-         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
-         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
-         echo "$KNOWN_HOSTS" > "$KNOWN_HOSTS_PATH"
-         chmod 700 "$SSH_PATH"
-         chmod 644 "$KNOWN_HOSTS_PATH"
-         chmod 600 "$SSH_KEY_PRIVATE_PATH"
-         chmod 644 "$SSH_KEY_PUBLIC_PATH"
-         chmod 600 "$SSH_CONFIG_PATH"
-         echo STATUS CHECK
-         cd ~/.ssh
-         pwd
-         ls -la
-         sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+   #      mkdir -p $SSH_PATH
+   #      touch $KNOWN_HOSTS_PATH
+   #      touch $SSH_CONFIG
+   #      echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
+   #      echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
+   #      echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
+   #      echo "$KNOWN_HOSTS" > "$KNOWN_HOSTS_PATH"
+   #      chmod 700 "$SSH_PATH"
+   #      chmod 644 "$KNOWN_HOSTS_PATH"
+   #      chmod 600 "$SSH_KEY_PRIVATE_PATH"
+   #      chmod 644 "$SSH_KEY_PUBLIC_PATH"
+   #      chmod 600 "$SSH_CONFIG_PATH"
+   #      echo STATUS CHECK
+   #      cd ~/.ssh
+   #      pwd
+   #      ls -la
+   #      sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
          
  # sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
 
 # sftp -o StrictHostKeyChecking=no appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in;
 
 #=====================
-    # container: jpgomezz/quarto:final
-    
-    
-    
-   #   - name: Prepare Environment
-   #   env:
-   #      SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
-   #      SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-   #      SSH_PATH: /github/home/.ssh
-   #      KNOWN_HOSTS_PATH: /github/home/.ssh/known_hosts
-   #      SSH_KEY_PRIVATE_PATH: /github/home/.ssh/id_rsa
-   #      SSH_KEY_PUBLIC_PATH: /github/home/.ssh/id_rsa.pub
-   #      SSH_CONFIG_PATH: /github/home/.ssh/config
-   #      SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
-   #      KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
-   #      KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-   #     
-   #   run: |
-   #      mkdir -p $SSH_PATH;
-   #      touch $KNOWN_HOSTS_PATH;
-   #      touch $SSH_CONFIG;
-   #      echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH";
-   #      echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
-   #      echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
-   #      echo "$KNOWN_HOSTS" > "KNOWN_HOSTS_PATH";
-   #      chmod 700 "$SSH_PATH";
-   #      chmod 644 "$KNOWN_HOSTS_PATH";
-   #      chmod 600 "$SSH_KEY_PRIVATE_PATH";
-   #      chmod 644 "$SSH_KEY_PUBLIC_PATH";
-   #      sftp -o StrictHostKeyChecking=no appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in;
-   #      sftp -i /github/home/.ssh/id_rsa -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
-   # 
-    
-    
-    
-    
-    
-    
-# sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
 
-#         sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
-
-#        sftp -i /github/home/.ssh/id_rsa user@example.com
-#        sftp -i /github/home/.ssh/id_rsa.pub -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
-# sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
-
+    # WORKING
+    
+ #       - name: Prepare Environment
+ #     env:
+ #        SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
+ #        SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
+ #        SSH_PATH: /home/runner/.ssh
+ #        KNOWN_HOSTS_PATH: /home/runner/.ssh/known_hosts
+ #        SSH_KEY_PRIVATE_PATH: /home/runner/.ssh/id_rsa
+ #        SSH_KEY_PUBLIC_PATH: /home/runner/.ssh/id_rsa.pub
+ #        SSH_CONFIG_PATH: /home/runner/.ssh/config
+ #        SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
+ #        KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
+ #        KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
+ #     run: |
+ #        echo show CD ~
+ #        cd ~
+ #        pwd
+ #        ls -la
+ #        mkdir -p $SSH_PATH
+ #        touch $KNOWN_HOSTS_PATH
+ #        touch $SSH_CONFIG
+ #        echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
+ #        echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH"
+ #        echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH"
+ #        echo "$KNOWN_HOSTS" > "$KNOWN_HOSTS_PATH"
+ #        chmod 700 "$SSH_PATH"
+ #        chmod 644 "$KNOWN_HOSTS_PATH"
+ #        chmod 600 "$SSH_KEY_PRIVATE_PATH"
+ #        chmod 644 "$SSH_KEY_PUBLIC_PATH"
+ #        chmod 600 "$SSH_CONFIG_PATH"
+ #        echo STATUS CHECK
+ #        cd ~/.ssh
+ #        pwd
+ #        ls -la
+ #        sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+    
+    
+    
          
       # ENV=dev;
       # export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528;
