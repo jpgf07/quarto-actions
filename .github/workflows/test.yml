@@ -34,7 +34,7 @@ jobs:
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
           echo PRINT ROOT DIRECTORIES RUNNER
-          cd /
+          cd ~
           ls -la
      
      
