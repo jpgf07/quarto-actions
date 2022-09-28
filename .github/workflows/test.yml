@@ -9,43 +9,53 @@ jobs:
     runs-on: ubuntu-latest
     container: jpgomezz/quarto:final
     steps:             
-      - name: Prepare Environment
-        env:
-         SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
-         SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
-         SSH_PATH: /home/root/.ssh
-         KNOWN_HOSTS_PATH: /home/root/.ssh/known_hosts
-         SSH_KEY_PRIVATE_PATH: /home/root/.ssh/id_rsa
-         SSH_KEY_PUBLIC_PATH: /home/root/.ssh/id_rsa.pub
-         SSH_CONFIG: /home/root/.ssh/config
-         KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
+
+    - uses: actions/checkout@v2
+    - run: |
+        echo WHO AM I
+        whoami
+
+
+
+
+ #     - name: Prepare Environment
+ #       env:
+ #        SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
+ #        SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
+ #        SSH_PATH: /home/root/.ssh
+ #        KNOWN_HOSTS_PATH: /home/root/.ssh/known_hosts
+ #        SSH_KEY_PRIVATE_PATH: /home/root/.ssh/id_rsa
+ #        SSH_KEY_PUBLIC_PATH: /home/root/.ssh/id_rsa.pub
+ #        SSH_CONFIG: /home/root/.ssh/config
+ #        KNOWN_HOST_URL: ${{ secrets.KNOWN_HOST_URL }}
         
-        run: |
-         mkdir -p $SSH_PATH;
-         touch $KNOWN_HOSTS_PATH;
-         touch $SSH_CONFIG;
-         echo "$KNOWN_HOST_URL" >> $SSH_CONFIG;
-         echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
-         echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
-         chmod 700 "$SSH_PATH";
-         chmod 644 "$KNOWN_HOSTS_PATH";
-         chmod 600 "$SSH_KEY_PRIVATE_PATH";
-         chmod 644 "$SSH_KEY_PUBLIC_PATH";
-         cat $SSH_CONFIG;
-         sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
+ #       run: |
+ #        mkdir -p $SSH_PATH;
+ #        touch $KNOWN_HOSTS_PATH;
+ #        touch $SSH_CONFIG;
+ #        echo "$KNOWN_HOST_URL" >> $SSH_CONFIG;
+ #        echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
+ #        echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
+ #        chmod 700 "$SSH_PATH";
+ #        chmod 644 "$KNOWN_HOSTS_PATH";
+ #        chmod 600 "$SSH_KEY_PRIVATE_PATH";
+ #        chmod 644 "$SSH_KEY_PUBLIC_PATH";
+ #        cat $SSH_CONFIG;
+ #        sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
          
          
        # ENV=dev;
        # export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528;
 
 
-# ORIGIGI
-#      - uses: actions/checkout@v2
-#      - run: |
-#          echo STARTING WITH THE PROJECT
-#          cd /
-#          cd root
-#          ls -la
+
+
+
+
+
+
+
+
 
  #     - name: Installing PHP
  #       uses: shivammathur/setup-php@master
