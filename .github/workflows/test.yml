@@ -22,7 +22,6 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
-      - name: prepare environment
         env:
           SSH_KEY_PRIVATE: ${{ secrets.PRIVATEKEY }}
           SSH_KEY_PUBLIC: ${{ secrets.PUBLICKEY }}
