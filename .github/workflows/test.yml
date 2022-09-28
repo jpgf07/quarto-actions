@@ -7,7 +7,6 @@ on:
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    container: jpgomezz/quarto:final
     steps:             
     - uses: actions/checkout@v2
     - run: |
@@ -42,6 +41,11 @@ jobs:
          sftp -i /github/home/.ssh/id_rsa -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
 
 
+
+
+    # container: jpgomezz/quarto:final
+    
+    
 # sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
 
 #         sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
