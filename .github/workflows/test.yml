@@ -18,13 +18,13 @@ jobs:
         pwd
         ls -la
         echo /root/github content
-        cd /github
+        cd github
         ls -la
         echo /root/github/home/ content
-        cd /home
+        cd home
         ls -la
         echo /root/github/home/runner content
-        cd /runner
+        cd runner
         ls -la
 
 #    - name: Prepare Environment
