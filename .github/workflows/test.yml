@@ -10,7 +10,6 @@ jobs:
     container: jpgomezz/quarto:final            
     steps:
      - uses: actions/checkout@v1
-     - uses: actions/checkout@v2
        name: Render files
      - run: |
         echo DIRECTORIES CONTAINER
