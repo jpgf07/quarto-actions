@@ -13,14 +13,13 @@ jobs:
        name: Render files
      - run: |
         echo DIRECTORIES CONTAINER
-        cd /quatro
-        pwd
+        cd /
         ls -la
      
   job2-name:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
+      - name: checkout repository content
         uses: actions/checkout@v2
       - run: | 
           echo PRINT ROOT DIRECTORIES RUNNER
