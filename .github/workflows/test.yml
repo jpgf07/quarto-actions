@@ -31,9 +31,8 @@ jobs:
          pwd
          ls -la
          mkdir -p $SSH_PATH
-         chmod 700 "$SSH_PATH"
          ls -la
-         touch $KNOWN_HOSTS_PATH
+         touch $SSH_CONFIG_PATH
          ls -la
   #       touch $SSH_CONFIG
   #       echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH"
