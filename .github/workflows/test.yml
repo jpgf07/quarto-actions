@@ -31,11 +31,9 @@ jobs:
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
           echo Making listing home files
-          cd /home/runner;
-          touch test.txt
-          echo "$SSH_PATH" >> test.txt;
+          cd /home/runner
+          echo "$SSH_PATH"
           ls -la
-          cat test.txt
     #      touch $SSH_CONFIG_PATH;
     #      echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH";
     #      echo "$SSH_KEY_PRIVATE" > "$SSH_KEY_PRIVATE_PATH";
