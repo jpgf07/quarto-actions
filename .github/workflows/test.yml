@@ -23,6 +23,9 @@ jobs:
         echo /root/github/home/ content
         cd /home
         ls -la
+        echo /root/github/home/runner content
+        cd /runner
+        ls -la
 
 #    - name: Prepare Environment
 #      env:
