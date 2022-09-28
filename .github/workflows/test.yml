@@ -20,6 +20,9 @@ jobs:
         echo /root/github content
         cd /github
         ls -la
+        echo /root/github/home/ content
+        cd /home
+        ls -la
 
 #    - name: Prepare Environment
 #      env:
