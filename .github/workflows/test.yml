@@ -32,7 +32,8 @@ jobs:
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - run: | 
           echo Making listing home files
-          echo ${{ secrets.KNOWN_HOST_URL }}
+          mkdir -p ${{ secrets.SSH_PATH }}
+          cd /home/runner/
           ls -la
     #      touch $SSH_CONFIG_PATH;
     #      echo "$SSH_CONFIG" >> "$SSH_CONFIG_PATH";
