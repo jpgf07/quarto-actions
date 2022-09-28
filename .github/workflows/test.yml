@@ -32,6 +32,9 @@ jobs:
         echo github folder and listing
         cd /github
         ls -la
+        echo switching to github home and listing
+        cd /github/home
+        ls -la
       
       
       
