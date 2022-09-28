@@ -34,23 +34,18 @@ jobs:
           mkdir -p ${{ secrets.SSH_PATH }}  
           touch ${{ secrets.SSH_CONFIG_PATH }}
           echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
-          echo "${{ secrets.PRIVATEKEY }}" > "/home/runner/.ssh/id_rsa"
-          cd /home/runner/.ssh/
+          echo "${{ secrets.PRIVATEKEY }}" > "/home/runner/.ssh/id_rsa"    
+          echo "${{ secrets.PUBLICKEY }}" > "/home/runner/.ssh/id_rsa.pub"      
+          echo "${{ secrets.KNOWN_HOSTS }}" > "/home/runner/known_hosts"
+          chmod 700 "/home/runner/.ssh/"
+          chmod 644 "/home/runner/known_hosts"
+          chmod 600 "/home/runner/.ssh/id_rsa"
+          chmod 644 "/home/runner/.ssh/id_rsa.pub"
+          chmod 600 "/home/runner/.ssh/config"
+          echo SSH DIRECTORIES STATUS CHECK
+          cd /github/home/.ssh/
+          pwd
           ls -la
-    
-    
-    
-    #      echo "$SSH_KEY_PUBLIC" > "$SSH_KEY_PUBLIC_PATH";
-    #      echo "$KNOWN_HOSTS" > "$KNOWN_HOSTS_PATH";
-    #      chmod 700 "$SSH_PATH";
-    #      chmod 644 "$KNOWN_HOSTS_PATH";
-    #      chmod 600 "$SSH_KEY_PRIVATE_PATH";
-    #      chmod 644 "$SSH_KEY_PUBLIC_PATH";
-    #      chmod 600 "$SSH_CONFIG_PATH";
-    #      echo SSH DIRECTORIES STATUS CHECK;
-    #      cd /github/home/.ssh/;
-    #      pwd;
-    #      ls -la
          
          
  # sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in
