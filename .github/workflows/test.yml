@@ -37,6 +37,9 @@ jobs:
           cd home
           pwd
           ls -la
+          cd runner
+          pwd
+          ls -la
      
      
      
