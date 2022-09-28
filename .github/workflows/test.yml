@@ -38,7 +38,7 @@ jobs:
           echo after config file creation
           cd /home/runner/.ssh/
           ls -la
-          echo ${{ secrets.SSH_CONFIG }} >> ${{ secrets.SSH_CONFIG_PATH }}
+          echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
           ls -la
           cat /home/runner/.ssh/config
     #      echo ${{ secrets.SSH_CONFIG }} >> ${{ secrets.SSH_CONFIG_PATH }}
