@@ -18,14 +18,11 @@ jobs:
           cd /__w/quarto-actions/quarto-actions/
           quarto render --to html
           tree public/markdown/
-  
-     - run: mkdir -p path/to/artifact
-     - run: echo hello > path/to/artifact/world.txt
 
      - uses: actions/upload-artifact@master
        with:
         name: my-artifact
-        path: path/to/artifact
+        path: public/markdown/
 
 
   sftp-transfer:
@@ -37,7 +34,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
          name: my-artifact
-         path: path/to/artifact
+         path: public/markdown/
      
       - run: | 
           echo PRINT ROOT DIRECTORIES RUNNER
@@ -64,7 +61,7 @@ jobs:
           pwd
           ls -la
           sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in <<END
-          put /home/runner/work/quarto-actions/quarto-actions/path/to/artifact/world.txt /files/world.txt
+          put /home/runner/work/quarto-actions/quarto-actions/public/markdown/ /files/world.txt
      
      
      
