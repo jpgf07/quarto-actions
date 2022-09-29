@@ -12,10 +12,12 @@ jobs:
      - uses: actions/checkout@v1
        name: Render files
      - run: |
-        echo DIRECTORIES CONTAINER
-        cd /__w/quarto-actions/quarto-actions
-        pwd
-        ls -la
+          sudo apt-get update
+          sudo apt-get install tree
+          echo STARTING WITH THE PROJECT
+          cd /__w/quarto-actions/quarto-actions/
+          quarto render --to html
+          tree public/markdown/
   
      - run: mkdir -p path/to/artifact
      - run: echo hello > path/to/artifact/world.txt
@@ -139,31 +141,6 @@ jobs:
       # export SITE=6ea2702b-ed4d-4196-b545-10c1de13b528;
 
 
-
-
-# ORIGIGIGI
-#    - uses: actions/checkout@v2
-#    - run: |
-#        echo WHO AM I
-#        whoami
-#        echo PRINT HOME DIRECTORY
-#        cd ~/
-#        pwd
-#        ls -la
-
-
- #     - name: Installing PHP
- #       uses: shivammathur/setup-php@master
- #       with:
- #         php-version: '8.1'
- #     - name: Installing Terminus
- #       uses: kopepasah/setup-pantheon-terminus@master
- #       with:
- #         pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
- #     - name: Listing Sites
- #       if: success()
- #       run: |
- #         terminus site:list
 
 
 
