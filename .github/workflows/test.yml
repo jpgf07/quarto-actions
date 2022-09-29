@@ -37,11 +37,8 @@ jobs:
          path: public/markdown/
      
       - run: | 
-          echo PRINT ROOT DIRECTORIES RUNNER
-          cd /
-          ls -la
           echo CHECKING ARTIFACT
-          cat /home/runner/work/quarto-actions/quarto-actions/path/to/artifact/world.txt
+          ls -la /home/runner/work/quarto-actions/quarto-actions/public/markdown/
      
       - run: |
           mkdir -p ${{ secrets.SSH_PATH }}
