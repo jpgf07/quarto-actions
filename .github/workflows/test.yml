@@ -62,7 +62,7 @@ jobs:
           pwd
           ls -la
           sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in <<END
-          ls
+          get /home/runner/work/quarto-actions/quarto-actions/path/to/artifact/world.txt /files/world.txt
      
      
      
