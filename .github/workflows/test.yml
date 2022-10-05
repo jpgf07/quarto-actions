@@ -71,5 +71,5 @@ jobs:
         if: success()
         run: |
           terminus site:list
-          terminus connection:set jptest1.dev sftp
+          terminus connection:set jptest1.dev git
       
