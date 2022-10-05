@@ -63,5 +63,6 @@ jobs:
           chmod 644 "/home/runner/.ssh/id_rsa.pub"
           chmod 600 "/home/runner/.ssh/config"
           sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in <<END
-          put -r /home/runner/work/quarto-actions/quarto-actions/public/markdown/* /files/
+          put -r /home/runner/work/quarto-actions/quarto-actions/public/markdown/* /files/ <<END
+          exit  <<END
           terminus connection:set jptest1.dev git
