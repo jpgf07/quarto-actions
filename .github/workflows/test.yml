@@ -38,7 +38,7 @@ jobs:
      
       - run: | 
           echo CHECKING ARTIFACT
-          ls /home/runner/work/quarto-actions/quarto-actions/public/markdown/
+          ls -la /home/runner/work/quarto-actions/quarto-actions/public/markdown/
      
       - run: |
           mkdir -p ${{ secrets.SSH_PATH }}
