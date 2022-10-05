@@ -47,7 +47,7 @@ jobs:
         if: success()
         run: |
           terminus site:list
-          terminus connection:set jptest1.dev sftp
+ 
      
       - run: |
           mkdir -p ${{ secrets.SSH_PATH }}
@@ -66,3 +66,5 @@ jobs:
           put -r /home/runner/work/quarto-actions/quarto-actions/public/markdown/* /files/
           
 
+
+      #   terminus connection:set jptest1.dev sftp
