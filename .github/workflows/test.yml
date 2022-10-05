@@ -23,7 +23,6 @@ jobs:
         name: my-artifact
         path: public/markdown/
 
-
   sftp-transfer:
     needs: quarto-linux
     runs-on: ubuntu-latest
@@ -50,7 +49,8 @@ jobs:
           terminus connection:set jptest1.dev sftp
           sleep 60
      
-      - run: |
+      - name: Transferring files to Pantheon
+        run: |
           mkdir -p ${{ secrets.SSH_PATH }}
           touch /home/runner/.ssh/known_hosts
           touch ${{ secrets.SSH_CONFIG_PATH }}
@@ -66,8 +66,10 @@ jobs:
           sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in <<END
           put -r /home/runner/work/quarto-actions/quarto-actions/public/markdown/* /files/
           
-
-
+          
+      - name: Development mode back to Git
+        if: success()
+        run: |
+          terminus site:list
       #   terminus connection:set jptest1.dev sftp
-      #   sleep 35
       
