@@ -50,7 +50,7 @@ jobs:
           terminus connection:set jptest1.dev sftp
      
       - run: |
-          sleep 25
+          sleep 35
           mkdir -p ${{ secrets.SSH_PATH }}
           touch /home/runner/.ssh/known_hosts
           touch ${{ secrets.SSH_CONFIG_PATH }}
