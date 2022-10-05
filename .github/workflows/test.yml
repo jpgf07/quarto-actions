@@ -48,7 +48,7 @@ jobs:
         run: |
           terminus site:list
           terminus connection:set jptest1.dev sftp
-          sleep 35
+          sleep 60
      
       - run: |
           mkdir -p ${{ secrets.SSH_PATH }}
