@@ -18,7 +18,7 @@ jobs:
           cd /__w/quarto-actions/quarto-actions/
           quarto render --to html
           tree public/markdown/
-
+    
      - uses: actions/upload-artifact@master
        with:
         name: my-artifact
@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@master
       - uses: actions/download-artifact@master
         with:
-         name: my-artifact
+         name: Downloading Rendered files artifact
          path: public/markdown/
       - run: | 
           echo CHECKING ARTIFACT
@@ -43,12 +43,14 @@ jobs:
         uses: kopepasah/setup-pantheon-terminus@master
         with:
           pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
-      - name: Listing Sites
+      - name: Development mode to SFTP
         if: success()
         run: |
           terminus site:list
           terminus connection:set jptest1.dev sftp
-     
+      
+      
+      - name: Transferring files to Pantheon
       - run: |
           mkdir -p ${{ secrets.SSH_PATH }}
           touch /home/runner/.ssh/known_hosts
@@ -63,7 +65,10 @@ jobs:
           chmod 644 "/home/runner/.ssh/id_rsa.pub"
           chmod 600 "/home/runner/.ssh/config"
           sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in <<END
-          put -r /home/runner/work/quarto-actions/quarto-actions/public/markdown/* /files/
+          put -r /home/runner/work/quarto-actions/quarto-actions/public/markdown/* /files/ <<END
+          
+      - name: Development mode to GIT
+      - run: |
           terminus connection:set jptest1.dev git
      
      
