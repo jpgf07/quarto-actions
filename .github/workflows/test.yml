@@ -35,10 +35,17 @@ jobs:
         with:
          name: my-artifact
          path: public/markdown/
-     
       - run: | 
           echo CHECKING ARTIFACT
           ls -la /home/runner/work/quarto-actions/quarto-actions/public/markdown/
+     
+      - name: Installing Terminus
+        uses: kopepasah/setup-pantheon-terminus@master
+        with:
+          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+      - name: Listing Sites
+        if: success()
+        run: terminus site:list
      
       - run: |
           mkdir -p ${{ secrets.SSH_PATH }}
