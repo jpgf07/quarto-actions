@@ -10,16 +10,20 @@ jobs:
     container: jpgomezz/quarto:final            
     steps:
      - uses: actions/checkout@v1
-       name: Render files
+       
+       name: Installing Libraries
      - run: |
           sudo apt-get update
           sudo apt-get install tree
-          echo STARTING WITH THE PROJECT
-          cd /__w/quarto-actions/quarto-actions/
           chmod +x Rlibraries.sh
           ./Rlibraries.sh
+          
+       name: Rendering Files
+     - run: |
+          cd /__w/quarto-actions/quarto-actions/
           quarto render --to html
           tree public/markdown/
+          
           
      - uses: actions/upload-artifact@master
        with:
