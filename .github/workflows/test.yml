@@ -2,7 +2,7 @@ name: quarto-setup
 
 on: 
   push:
-    branches: main
+    branches: none
 
 jobs:
   quarto-linux:
@@ -16,6 +16,8 @@ jobs:
           sudo apt-get install tree
           echo STARTING WITH THE PROJECT
           cd /__w/quarto-actions/quarto-actions/
+          chmod +x hello.sh
+          ./hello.sh
           quarto render --to html
           tree public/markdown/
           
