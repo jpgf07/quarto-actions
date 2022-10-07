@@ -18,6 +18,7 @@ jobs:
           cd /__w/quarto-actions/quarto-actions/
           quarto render --to html
           tree public/markdown/
+          
      - uses: actions/upload-artifact@master
        with:
         name: my-artifact
@@ -36,6 +37,22 @@ jobs:
       - run: | 
           echo CHECKING ARTIFACT
           ls -la /home/runner/work/quarto-actions/quarto-actions/public/markdown/
+          
+          
+      - name: Preparing Environment
+        run: |   
+          mkdir -p ${{ secrets.SSH_PATH }}
+          touch /home/runner/.ssh/known_hosts
+          touch ${{ secrets.SSH_CONFIG_PATH }}
+          echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
+          echo "${{ secrets.PRIVATEKEY }}" > "/home/runner/.ssh/id_rsa"    
+          echo "${{ secrets.PUBLICKEY }}" > "/home/runner/.ssh/id_rsa.pub"      
+          echo "${{ secrets.KNOWN_HOSTS }}" > "/home/runner/.ssh/known_hosts"
+          chmod 700 "/home/runner/.ssh/"
+          chmod 644 "/home/runner/.ssh/known_hosts"
+          chmod 600 "/home/runner/.ssh/id_rsa"
+          chmod 644 "/home/runner/.ssh/id_rsa.pub"
+          chmod 600 "/home/runner/.ssh/config"
      
       - name: Installing Terminus
         uses: kopepasah/setup-pantheon-terminus@master
@@ -51,21 +68,8 @@ jobs:
      
       - name: Transferring files to Pantheon
         run: |
-          mkdir -p ${{ secrets.SSH_PATH }}
-          touch /home/runner/.ssh/known_hosts
-          touch ${{ secrets.SSH_CONFIG_PATH }}
-          echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
-          echo "${{ secrets.PRIVATEKEY }}" > "/home/runner/.ssh/id_rsa"    
-          echo "${{ secrets.PUBLICKEY }}" > "/home/runner/.ssh/id_rsa.pub"      
-          echo "${{ secrets.KNOWN_HOSTS }}" > "/home/runner/.ssh/known_hosts"
-          chmod 700 "/home/runner/.ssh/"
-          chmod 644 "/home/runner/.ssh/known_hosts"
-          chmod 600 "/home/runner/.ssh/id_rsa"
-          chmod 644 "/home/runner/.ssh/id_rsa.pub"
-          chmod 600 "/home/runner/.ssh/config"
           sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in <<END
           put -r /home/runner/work/quarto-actions/quarto-actions/public/markdown/* /files/
-          
           
       - name: Development mode back to Git
         if: success()
