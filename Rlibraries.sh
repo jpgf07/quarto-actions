@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Installing Additional R Libraries"
-R --vanilla
 #ADD LIBRARIES PACKAGES HERE#
-install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+Rscript -e 'install.packages("glue", repos="http://cran.us.r-project.org")'
+Rscript -e 'install.packages("drat", repos="http://cran.us.r-project.org")'
 #CLOSING R PACKAGE MANAGER
 q()
-echo "END"
+echo "End"
