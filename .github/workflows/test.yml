@@ -2,12 +2,12 @@ name: quarto-setup
 
 on: 
   push:
-    branches: main
+    branches: none
 
 jobs:
   quarto-linux:
     runs-on: ubuntu-latest
-    container: jpgomezz/quarto:final            
+    container: jpgomezz/newquarto-test:latest          
     steps:
      - uses: actions/checkout@v1
        
