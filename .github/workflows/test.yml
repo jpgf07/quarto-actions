@@ -15,6 +15,7 @@ jobs:
      - run: |
           sudo apt-get update
           sudo apt-get install tree
+          pwd
           chmod +x Rlibraries.sh
           ./Rlibraries.sh
           
