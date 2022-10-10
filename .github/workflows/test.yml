@@ -30,7 +30,7 @@ jobs:
      
       
    # Run the job only with "docs_changed" equals "True"
-  conditional_job:
+  Docker_Image_Update:
     runs-on: ubuntu-latest
     needs: [ conditional_job_check_files ]
     if: needs.conditional_job_check_files.outputs.docs_changed == 'True'
@@ -56,7 +56,7 @@ jobs:
           tags: jpgomezz/newquarto-test:latest            
           
   quarto-linux:
-    needs: conditional_job
+    needs: Docker_Image_Update
     runs-on: ubuntu-latest
     container: jpgomezz/newquarto-test:latest          
     steps:
@@ -73,7 +73,7 @@ jobs:
         name: my-artifact
         path: public/markdown/
 
-  sftp-transfer:
+  SFTP-Transfer:
     needs: quarto-linux
     runs-on: ubuntu-latest
     steps:
