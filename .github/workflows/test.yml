@@ -8,14 +8,14 @@ jobs:
   Update-container:
     runs-on: ubuntu-latest
     steps:
-    
-      - name: Set up QEMU
+      -
+        name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-    
-      - name: checkout repository content
-        uses: actions/checkout@v1
-      - run: | 
-          pwd
+     
+      - uses: actions/checkout@v1
+      - run: |
+           pwd
+           ls -la
           
       - name: Login to DockerHub
         uses: docker/login-action@v2
