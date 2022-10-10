@@ -2,10 +2,21 @@ name: quarto-setup
 
 on: 
   push:
-    branches: none
+    branches: main
 
 jobs:
+
+  Update-container:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository content
+        uses: actions/checkout@v1
+      - run: | 
+          pwd
+          
+          
   quarto-linux:
+    needs: Update-container
     runs-on: ubuntu-latest
     container: jpgomezz/newquarto-test:latest          
     steps:
