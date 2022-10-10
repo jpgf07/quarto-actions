@@ -39,7 +39,7 @@ jobs:
      - run: |
           cd /__w/quarto-actions/quarto-actions/
           quarto render --to html
-          tree public/markdown/
+          ls public/markdown/
           
      - uses: actions/upload-artifact@master
        with:
