@@ -55,7 +55,7 @@ jobs:
           push: true
           tags: jpgomezz/newquarto-test:latest            
           
-  quarto-linux:
+  Quarto-Rendering:
     needs: Docker_Image_Update
     runs-on: ubuntu-latest
     container: jpgomezz/newquarto-test:latest          
@@ -74,7 +74,7 @@ jobs:
         path: public/markdown/
 
   SFTP-Transfer:
-    needs: quarto-linux
+    needs: Quarto-Rendering
     runs-on: ubuntu-latest
     steps:
       - name: checkout repository content
