@@ -5,7 +5,7 @@ on:
     branches: main
 
 jobs:
-  conditional_job_check_files:
+  Libraries_Update_Check:
     runs-on: 'ubuntu-20.04'
     # Declare outputs for next jobs
     outputs:
@@ -32,8 +32,8 @@ jobs:
    # Run the job only with "docs_changed" equals "True"
   Docker_Image_Update:
     runs-on: ubuntu-latest
-    needs: [ conditional_job_check_files ]
-    if: needs.conditional_job_check_files.outputs.docs_changed == 'True'
+    needs: [ Libraries_Update_Check ]
+    if: needs.Libraries_Update_Check.outputs.docs_changed == 'True'
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -130,8 +130,8 @@ jobs:
         
   Libraries_Not_Updated:
       runs-on: ubuntu-latest
-      needs: [ conditional_job_check_files ]
-      if: needs.conditional_job_check_files.outputs.docs_changed == 'False'
+      needs: [ Libraries_Update_Check ]
+      if: needs.Libraries_Update_Check.outputs.docs_changed == 'False'
       steps:
         - name: Set up QEMU
           run: echo "No Library Updates, starting rendering process"
