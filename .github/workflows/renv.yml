@@ -5,24 +5,41 @@ on:
     branches: none
 
 jobs:
-  quarto-linux:
+
+  Update-container:
     runs-on: ubuntu-latest
-    container: jpgomezz/quarto:final            
+    steps:
+      - name: checkout repository content
+        uses: actions/checkout@v1
+      - run: | 
+          pwd
+          
+          
+  quarto-linux:
+    needs: Update-container
+    runs-on: ubuntu-latest
+    container: jpgomezz/newquarto-test:latest          
     steps:
      - uses: actions/checkout@v1
-       name: Render files
+       
+       name: Installing Libraries
      - run: |
           sudo apt-get update
           sudo apt-get install tree
-          echo STARTING WITH THE PROJECT
+          chmod +x Rlibraries.sh
+          ./Rlibraries.sh
+          
+       name: Rendering Files
+     - run: |
           cd /__w/quarto-actions/quarto-actions/
           quarto render --to html
           tree public/markdown/
+          
+          
      - uses: actions/upload-artifact@master
        with:
         name: my-artifact
         path: public/markdown/
-
 
   sftp-transfer:
     needs: quarto-linux
@@ -37,6 +54,22 @@ jobs:
       - run: | 
           echo CHECKING ARTIFACT
           ls -la /home/runner/work/quarto-actions/quarto-actions/public/markdown/
+          
+          
+      - name: Preparing Environment
+        run: |   
+          mkdir -p ${{ secrets.SSH_PATH }}
+          touch /home/runner/.ssh/known_hosts
+          touch ${{ secrets.SSH_CONFIG_PATH }}
+          echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
+          echo "${{ secrets.PRIVATEKEY }}" > "/home/runner/.ssh/id_rsa"    
+          echo "${{ secrets.PUBLICKEY }}" > "/home/runner/.ssh/id_rsa.pub"      
+          echo "${{ secrets.KNOWN_HOSTS }}" > "/home/runner/.ssh/known_hosts"
+          chmod 700 "/home/runner/.ssh/"
+          chmod 644 "/home/runner/.ssh/known_hosts"
+          chmod 600 "/home/runner/.ssh/id_rsa"
+          chmod 644 "/home/runner/.ssh/id_rsa.pub"
+          chmod 600 "/home/runner/.ssh/config"
      
       - name: Installing Terminus
         uses: kopepasah/setup-pantheon-terminus@master
@@ -50,18 +83,13 @@ jobs:
           terminus connection:set jptest1.dev sftp
           sleep 60
      
-      - run: |
-          mkdir -p ${{ secrets.SSH_PATH }}
-          touch /home/runner/.ssh/known_hosts
-          touch ${{ secrets.SSH_CONFIG_PATH }}
-          echo "${{ secrets.SSH_CONFIG }}" >> ${{ secrets.SSH_CONFIG_PATH }}
-          echo "${{ secrets.PRIVATEKEY }}" > "/home/runner/.ssh/id_rsa"    
-          echo "${{ secrets.PUBLICKEY }}" > "/home/runner/.ssh/id_rsa.pub"      
-          echo "${{ secrets.KNOWN_HOSTS }}" > "/home/runner/.ssh/known_hosts"
-          chmod 700 "/home/runner/.ssh/"
-          chmod 644 "/home/runner/.ssh/known_hosts"
-          chmod 600 "/home/runner/.ssh/id_rsa"
-          chmod 644 "/home/runner/.ssh/id_rsa.pub"
-          chmod 600 "/home/runner/.ssh/config"
+      - name: Transferring files to Pantheon
+        run: |
           sftp -oPort=2222 dev.6ea2702b-ed4d-4196-b545-10c1de13b528@appserver.dev.6ea2702b-ed4d-4196-b545-10c1de13b528.drush.in <<END
           put -r /home/runner/work/quarto-actions/quarto-actions/public/markdown/* /files/
+          
+      - name: Development mode back to Git
+        if: success()
+        run: |
+          terminus site:list
+          terminus connection:set jptest1.dev git
