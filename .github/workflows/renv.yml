@@ -44,6 +44,8 @@ jobs:
           pwd
           ls -la
           tree public/markdown/
+          echo "SHOWING renv.lock CONTENT"
+          cat renv.lock
           
           
      - uses: actions/upload-artifact@master
@@ -51,19 +53,19 @@ jobs:
         name: my-artifact
         path: public/markdown/
 
-  sftp-transfer:
-    needs: quarto-linux
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repository content
-        uses: actions/checkout@master
-      - uses: actions/download-artifact@master
-        with:
-         name: my-artifact
-         path: public/markdown/
-      - run: | 
-          echo CHECKING ARTIFACT
-          ls -la /home/runner/work/quarto-actions/quarto-actions/public/markdown/
+#  sftp-transfer:
+#    needs: quarto-linux
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: checkout repository content
+#        uses: actions/checkout@master
+#      - uses: actions/download-artifact@master
+#        with:
+#         name: my-artifact
+#         path: public/markdown/
+#      - run: | 
+#          echo CHECKING ARTIFACT
+#          ls -la /home/runner/work/quarto-actions/quarto-actions/public/markdown/
           
           
  #     - name: Preparing Environment
