@@ -23,6 +23,7 @@ jobs:
           Rscript -e 'install.packages("yaml")'
           Rscript -e 'renv::activate()'
           Rscript -e 'renv::restore()'
+          Rscript -e 'renv::install()'
           
      #      Rscript -e 'renv::install("rmarkdown")'
      #      Rscript -e 'renv::install("jsonlite")'
