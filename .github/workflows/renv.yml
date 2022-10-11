@@ -19,10 +19,10 @@ jobs:
           cd /__w/quarto-actions/quarto-actions/
           pwd
           ls -la
-          Rscript -e 'renv::activate()'
-          Rscript -e 'renv::install("rmarkdown")'
-          Rscript -e 'renv::install("jsonlite")'
-          Rscript -e 'renv::install("ggplot2")'
+    #      Rscript -e 'renv::activate()'
+    #      Rscript -e 'renv::install("rmarkdown")'
+    #      Rscript -e 'renv::install("jsonlite")'
+    #      Rscript -e 'renv::install("ggplot2")'
           
     
     
