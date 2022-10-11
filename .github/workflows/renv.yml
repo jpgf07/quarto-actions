@@ -19,7 +19,7 @@ jobs:
           cd /__w/quarto-actions/quarto-actions/
           pwd
           ls -la
-            Rscript -e 'install.packages(“renv")'
+            Rscript -e 'install.packages("renv")'
             Rscript -e 'install.packages("yaml")'
             Rscript -e 'renv::activate()'
      #      Rscript -e 'renv::install("rmarkdown")'
