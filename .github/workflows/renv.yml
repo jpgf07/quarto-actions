@@ -20,10 +20,6 @@ jobs:
           pwd
           ls -la
           Rscript -e 'renv::activate()'
-          mv /renv.lock .
-          echo "SHOW PROJECT FILES"
-          pwd
-          ls -la
           
     
     
