@@ -19,10 +19,8 @@ jobs:
           cd /__w/quarto-actions/quarto-actions/
           pwd
           ls -la
-          echo "PREACTIVATION  renv.lock"
           Rscript -e 'renv::activate()'
-          echo "POST ACTIVATION renv.lock"
-          cat renv.lock
+          Rscript -e 'renv::restore()'
     
     
     #     Rscript -e 'renv::restore()'
