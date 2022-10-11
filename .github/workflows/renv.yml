@@ -19,17 +19,16 @@ jobs:
           cd /__w/quarto-actions/quarto-actions/
           pwd
           ls -la
+          echo "PREACTIVATION  renv.lock"
           Rscript -e 'renv::activate()'
-          Rscript -e 'renv::restore()'
+          echo "POST ACTIVATION renv.lock"
+          cat renv.lock
+    
+    
+    #     Rscript -e 'renv::restore()'
   
   
-  #        jpgomezz/quarto:final
-  #        Rscript -e 'install.packages("renv")'
-  #        Rscript -e 'install.packages("yaml")'
-  #        Rscript -e 'renv::activate()'
-  #        Rscript -e 'renv::restore()'
-  #        Rscript -e 'renv::install()'
-  #        Rscript -e 'renv::install("memoise")'
+
           
 
           
@@ -42,14 +41,14 @@ jobs:
      - run: |
           pwd
           cd /__w/quarto-actions/quarto-actions/
-          quarto render --to html
-          Rscript -e 'renv::snapshot()'
-          echo "SHOW RENV FILES"
-          pwd
-          ls -la
-          tree public/markdown/
-          echo "SHOWING renv.lock CONTENT"
-          cat renv.lock
+#          quarto render --to html
+#          Rscript -e 'renv::snapshot()'
+#          echo "SHOW RENV FILES"
+#          pwd
+#          ls -la
+#          tree public/markdown/
+#          echo "SHOWING renv.lock CONTENT"
+#          cat renv.lock
           
           
      - uses: actions/upload-artifact@master
