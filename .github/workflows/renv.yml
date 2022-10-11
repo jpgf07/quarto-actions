@@ -2,7 +2,7 @@ name: quarto-setup
 
 on: 
   push:
-    branches: main
+    branches: none
 
 jobs:          
   quarto-linux:
