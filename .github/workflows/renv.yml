@@ -19,9 +19,11 @@ jobs:
           cd /__w/quarto-actions/quarto-actions/
           pwd
           ls -la
-  #         Rscript -e 'install.packages("renv")'
-  #         Rscript -e 'install.packages("yaml")'
-  #         Rscript -e 'renv::activate()'
+          Rscript -e 'install.packages("renv")'
+          Rscript -e 'install.packages("yaml")'
+          Rscript -e 'renv::activate()'
+          Rscript -e 'renv::restore()'
+          
      #      Rscript -e 'renv::install("rmarkdown")'
      #      Rscript -e 'renv::install("jsonlite")'
      #      Rscript -e 'renv::install("ggplot2")'
@@ -36,11 +38,11 @@ jobs:
           pwd
           cd /__w/quarto-actions/quarto-actions/
           quarto render --to html
- #         Rscript -e 'renv::snapshot()'
- #         echo "SHOW RENV FILES"
- #         pwd
- #         ls -la
- #         tree public/markdown/
+          Rscript -e 'renv::snapshot()'
+          echo "SHOW RENV FILES"
+          pwd
+          ls -la
+          tree public/markdown/
           
           
      - uses: actions/upload-artifact@master
