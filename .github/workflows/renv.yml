@@ -20,6 +20,8 @@ jobs:
           pwd
           ls -la
           Rscript -e 'renv::activate()'
+          Rscript -e 'renv::install("rmarkdown")'
+          Rscript -e 'renv::install("jsonlite")'
           
     
     
