@@ -2,7 +2,7 @@ name: quarto-setup
 
 on: 
   push:
-    branches: main
+    branches: none
 
 jobs:          
   quarto-linux:
@@ -29,6 +29,7 @@ jobs:
   #        Rscript -e 'renv::activate()'
   #        Rscript -e 'renv::restore()'
   #        Rscript -e 'renv::install()'
+  #        Rscript -e 'renv::install("memoise")'
           
 
           
