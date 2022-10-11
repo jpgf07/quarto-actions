@@ -4,19 +4,8 @@ on:
   push:
     branches: main
 
-jobs:
-
-  Update-container:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repository content
-        uses: actions/checkout@v1
-      - run: | 
-          pwd
-          
-          
+jobs:          
   quarto-linux:
-    needs: Update-container
     runs-on: ubuntu-latest
     container: jpgomezz/renv:v1         
     steps:
@@ -26,7 +15,10 @@ jobs:
      - run: |
           sudo apt-get update
           sudo apt-get install tree
+          echo "SHOW FILES"
           cd /__w/quarto-actions/quarto-actions/
+          pwd
+          ls -la
           Rscript -e 'renv::activate()'
           mv /renv.lock .
           echo "SHOW PROJECT FILES"
