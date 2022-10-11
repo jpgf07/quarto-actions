@@ -3,8 +3,8 @@ project:
   title: "posit-blogs"
   render:
     - markdown/*.md
- #  - markdown/*.Rmd
- #  - markdown/*.qmd
+    - markdown/*.Rmd
+    - markdown/*.qmd
   output-dir: public
 
 format:
