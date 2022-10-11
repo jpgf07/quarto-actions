@@ -19,6 +19,7 @@ jobs:
           cd /__w/quarto-actions/quarto-actions/
           pwd
           ls -la
+          Rscript -e 'renv::restore()'
           Rscript -e 'renv::activate()'
   
   
