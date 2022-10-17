@@ -17,6 +17,7 @@ jobs:
           echo "SHOW FILES"
           cd /__w/quarto-actions/quarto-actions/
           pwd
+          ls
           ls -la
       
     # Rscript -e 'renv::restore()'
