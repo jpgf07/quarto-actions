@@ -1,4 +1,4 @@
-name: quarto-setup
+name: quarto-renv
 
 on: 
   workflow_dispatch
