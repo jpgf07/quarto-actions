@@ -1,8 +1,7 @@
 name: quarto-setup
 
 on: 
-  push:
-    branches: main
+  workflow_dispatch
 
 jobs:          
   quarto-linux:
