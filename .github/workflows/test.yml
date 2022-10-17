@@ -1,8 +1,7 @@
 name: quarto-setup
 
 on: 
-  push:
-    branches: none
+  workflow_dispatch
 
 jobs:
   Libraries_Update_Check:
