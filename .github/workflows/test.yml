@@ -1,7 +1,14 @@
-name: quarto-setup
+name: quarto-rendering
 
 on: 
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+       loglevel:
+           description:  'log level'
+           required: true
+           default: 'warning'
+       tags:
+           description: 'Test Scenario Tags'
 
 jobs:
   Libraries_Update_Check:
