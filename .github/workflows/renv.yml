@@ -54,7 +54,11 @@ jobs:
        with:
         name: my-artifact
         path: public/markdown/
-
+     - run: |
+        echo "Log level: ${{ github.event.inputs.loglevel }}"
+        
+        
+        
 #  sftp-transfer:
 #    needs: quarto-linux
 #    runs-on: ubuntu-latest
