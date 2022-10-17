@@ -1,7 +1,14 @@
 name: quarto-renv
 
 on: 
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      logLevel:
+         description: 'log level'
+         required: true
+         default: 'warning'
+      tags: 
+         description: 'Test scenario tags'
 
 jobs:          
   quarto-linux:
