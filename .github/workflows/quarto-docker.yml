@@ -52,12 +52,12 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: jpgomezz/quarto:final         
+          tags: jpgomezz/renv:v3        
           
   Quarto-Rendering:
     needs: Docker_Image_Update
     runs-on: ubuntu-latest
-    container: jpgomezz/quarto:final      
+    container: jpgomezz/renv:v3    
     steps:
      - uses: actions/checkout@v1
        
