@@ -1,10 +1,6 @@
 name: labeler
 
-on:
- push:
-  branches: none
-
-#on: [pull_request]
+on: [pull_request]
 
 jobs:
   labeler:
