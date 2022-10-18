@@ -11,13 +11,13 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           xs_label: 'size/xs'
-          xs_max_size: '5'
+          xs_max_size: '1'
           s_label: 'size/s'
-          s_max_size: '10'
+          s_max_size: '2'
           m_label: 'size/m'
-          m_max_size: '15'
+          m_max_size: '3'
           l_label: 'size/l'
-          l_max_size: '20'
+          l_max_size: '4'
           xl_label: 'size/xl'
           fail_if_xl: 'true'
           message_if_xl: >
