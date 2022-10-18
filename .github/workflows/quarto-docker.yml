@@ -1,6 +1,8 @@
 name: quarto-docker
 
-on: workflow_dispatch
+on:
+ push:
+  branches: none
 
 
 jobs:
