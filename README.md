@@ -8,6 +8,8 @@ This repository stores [Github Actions](https://github.com/features/actions) use
 
 We recommend using `v2` for your actions, and our examples all use `v2`.
 
+TEST
+
 ## Examples
 
 In [Examples](./examples), you will find some YAML workflow files to serve as templates to be reused as a base for your project. We are also sharing some links to real example Github repositories using Quarto with Github Actions for rendering and deploying documents and projects. If you want to add your repository in the list, we welcome a PR.
