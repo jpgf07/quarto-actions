@@ -20,3 +20,5 @@ This repository uses [GitHub's recommended release management for actions](https
 * Semantic versioning is used, with major, minor and possibly patch release. 
 * Major versions (such as `v1`) will always point to the last minor or patch release for this major version. (when `v1.0.2` is out, `v1` will point to this update to). This means using `quarto-dev/quarto-actions/setup@v2` in your workflow file will automatically get the updated versions. Using `quarto-dev/quarto-actions/setup@v1.0.2` will pin a specific release.
 * Major version changes (`v1` to `v2`) will often come with breaking changes, and workflows might require manual updates.
+
+UPDATE - TEST
