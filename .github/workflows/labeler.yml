@@ -12,5 +12,5 @@ jobs:
         with:
           config_path: quarto-actions/.github/workflows/labeler_config.yml
         env:
-          GITHUB_TOKEN: "${{ secrets.LABELER }}"
+          GITHUB_TOKEN: "${{ secrets.GH_TK }}"
           
