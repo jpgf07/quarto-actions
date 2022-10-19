@@ -11,9 +11,9 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.the_token }}
           xs_max_size: '10'
-          s_max_size: '100'
-          m_max_size: '500'
-          l_max_size: '1000'
-          fail_if_xl: 'true'
+          s_max_size: '20'
+          m_max_size: '30'
+          l_max_size: '40'
+          fail_if_xl: 'false'
 
 # https://github.com/marketplace/actions/pull-request-size-labeler
