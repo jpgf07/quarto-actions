@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add Size Label to PR
-        uses: WizardOhio24/label-pr-size-action@master
+        uses: WizardOhio24/label-pr-size-action@v1.0.1
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TK }}
+
+
+
+
