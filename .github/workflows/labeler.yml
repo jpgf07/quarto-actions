@@ -1,30 +1,16 @@
-name: labeler
-
-on: [pull_request]
+name: "Pull Request Labeler"
+on:
+  - pull_request
 
 jobs:
-  labeler:
+  label:
     runs-on: ubuntu-latest
-    name: Label the PR size
     steps:
-      - uses: codelytv/pr-size-labeler@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          xs_label: 'size/xs'
-          xs_max_size: '10'
-          s_label: 'size/s'
-          s_max_size: '100'
-          m_label: 'size/m'
-          m_max_size: '500'
-          l_label: 'size/l'
-          l_max_size: '1000'
-          xl_label: 'size/xl'
-          fail_if_xl: 'false'
-          message_if_xl: >
-            This PR exceeds the recommended size of 1000 lines.
-            Please make sure you are NOT addressing multiple issues with one PR.
-            Note this PR might be rejected due to its size.
-          github_api_url: 'api.github.com'
-          files_to_ignore: ''
 
-# https://github.com/marketplace/actions/pull-request-size-labeler
+      # https://github.com/marketplace/actions/pr-labeler-based-on-multiple-rules
+      - uses: srvaroa/labeler@v0.8
+        with:
+          config_path: .github/labeler_config.yml
+        env:
+          GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
+          
