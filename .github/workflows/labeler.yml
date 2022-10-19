@@ -11,7 +11,7 @@ jobs:
       - name: Add Size Label to PR
         uses: WizardOhio24/label-pr-size-action@v1.0.1
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_TK }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
 
