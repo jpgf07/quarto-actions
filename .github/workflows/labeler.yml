@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: codelytv/pr-size-labeler@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.gh_token2 }}
+          GITHUB_TOKEN: ${{ secrets.gh_test }}
           xs_label: 'size/xs'
           xs_max_size: '5'
           s_label: 'size/s'
@@ -19,13 +19,13 @@ jobs:
           l_label: 'size/l'
           l_max_size: '20'
           xl_label: 'size/xl'
- #         fail_if_xl: 'true'
- #         message_if_xl: >
- #           This PR exceeds the recommended size of 5 lines.
- #           Please make sure you are NOT addressing multiple issues with one PR.
- #           Note this PR might be rejected due to its size.
- #         github_api_url: 'api.github.com'
- #         files_to_ignore: ''
+          fail_if_xl: 'true'
+          message_if_xl: >
+            This PR exceeds the recommended size of 5 lines.
+            Please make sure you are NOT addressing multiple issues with one PR.
+            Note this PR might be rejected due to its size.
+          github_api_url: 'api.github.com'
+          files_to_ignore: ''
 
 
 
