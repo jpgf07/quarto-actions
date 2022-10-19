@@ -9,7 +9,11 @@ jobs:
 
       # https://github.com/marketplace/actions/pr-labeler-based-on-multiple-rules
       - uses: srvaroa/labeler@v0.8
+      - uses: actions/checkout@v3
         with:
           config_path: .github/quarto-actions/labeler_config.yml
+          run: |
+            pwd
+            ls -la
         env:
           GITHUB_TOKEN: "${{ secrets.GH_TK }}"
