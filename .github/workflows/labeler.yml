@@ -9,7 +9,6 @@ jobs:
     steps:
       - uses: codelytv/pr-size-labeler@master
         with:
-          GITHUB_TOKEN: ${{ secrets.the_token }}
           xs_max_size: '10'
           s_max_size: '20'
           m_max_size: '30'
